@@ -206,10 +206,7 @@ const handleSubmit = async (e) => {
                   <span className="text-2xl font-bold mr-2">₹5,000 /-</span>
                   <span className="text-gray-200">INR</span>
                 </div>
-                <div className="flex items-baseline">
-                  <span className="text-2xl font-bold mr-2">CAD 1200</span>
-                  <span className="text-gray-200">CAD</span>
-                </div>
+                
               </div>
               <div className="mt-4 p-3 bg-amber-800/30 rounded-lg">
                 <p className="font-medium">Includes FREE access to:</p>
