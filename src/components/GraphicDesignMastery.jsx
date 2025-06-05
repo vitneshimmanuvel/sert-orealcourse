@@ -12,22 +12,19 @@ const GraphicDesignMastery = () => {
 
   const validateForm = () => {
     const newErrors = {};
-    
-    // Name validation (only letters and spaces)
+
     if (!formData.name.trim()) {
       newErrors.name = 'Name is required';
     } else if (!/^[a-zA-Z\s]+$/.test(formData.name)) {
       newErrors.name = 'Name should contain only letters and spaces';
     }
-    
-    // Phone validation (exactly 10 digits)
+
     if (!formData.phone) {
       newErrors.phone = 'Phone is required';
     } else if (!/^\d{10}$/.test(formData.phone)) {
       newErrors.phone = 'Phone must be 10 digits';
     }
-    
-    // Email validation
+
     if (!formData.email) {
       newErrors.email = 'Email is required';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
@@ -158,10 +155,10 @@ const handleSubmit = async (e) => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 text-gray-800">
-      <header className="bg-gradient-to-r from-blue-900 to-emerald-800 text-white py-16 px-4">
+      <header className=" text-black py-16 px-4">  
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center mb-8">
-              <img src="logo.png" alt="Logo" className="bg-white rounded-full md:mb-0 md:mr-10 w-20 transform scale-[1.5]" />
+              <img src="logo.png" alt="Logo" className=" md:mb-0 md:mr-10 w-20 transform scale-[1.5]" />
 
             <div>
               <h1 className="text-4xl md:text-5xl font-bold mb-2">Graphic Design Mastery</h1>
@@ -171,8 +168,8 @@ const handleSubmit = async (e) => {
             </div>
           </div>
           
-          <div className="flex flex-col md:flex-row gap-6">
-            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 flex-1">
+          <div className="flex flex-col md:flex-row gap-6 text-white">
+            <div className="bg-gradient-to-r from-emerald-600 to-blue-600 rounded-lg p-6 flex-1">
               <h3 className="font-bold text-lg mb-2">Duration</h3>
               <p className="text-3xl font-bold mb-2">1 Month</p>
               <ul className="space-y-1">
@@ -191,7 +188,7 @@ const handleSubmit = async (e) => {
               </ul>
             </div>
             
-            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 flex-1">
+            <div className="bg-gradient-to-r from-emerald-600 to-blue-600 rounded-lg p-6 flex-1">
               <h3 className="font-bold text-lg mb-2">Fees</h3>
               <div className="flex items-baseline mb-4">
                 <span className="text-3xl font-bold mr-2">₹20,000 /-</span>
@@ -518,11 +515,11 @@ const handleSubmit = async (e) => {
         </div>
       )}
 
-      <footer className="bg-gradient-to-r from-blue-900 to-emerald-800 text-white py-12 px-4">
+      <footer className="bg-black text-white py-12 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center">
             <div className="flex justify-center mb-4">
-                <img src="logo.png" alt="Logo" className="bg-white rounded-full md:mb-0 md:mr-10 w-20 transform scale-[1.5]" />
+                <img src="logo.png" alt="Logo" className=" md:mb-0 md:mr-10 w-20 transform scale-[3]" />
             </div>
             <p className="text-lg">© 2025 settlo academy all rights reserved.</p>
             <p className="mt-2 text-emerald-200">Designed with passion for creative education</p>

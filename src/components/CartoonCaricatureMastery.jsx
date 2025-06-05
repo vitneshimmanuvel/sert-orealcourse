@@ -150,10 +150,10 @@ const handleSubmit = async (e) => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-yellow-50 to-orange-50 text-gray-800">
-      <header className="bg-gradient-to-r from-orange-500 to-red-600 text-white py-16 px-4">
+      <header className="  text-black py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center mb-8">
-            <div className="bg-gradient-to-br from-yellow-400 to-red-500 rounded-full w-20 h-20 flex items-center justify-center mb-6 md:mb-0 md:mr-10">
+            <div className="bg-gradient-to-br  to-red-500 rounded-full w-20 h-20 flex items-center justify-center mb-6 md:mb-0 md:mr-10">
               <span className="text-3xl font-bold">C</span>
             </div>
             <div>
@@ -164,8 +164,8 @@ const handleSubmit = async (e) => {
             </div>
           </div>
           
-          <div className="flex flex-col md:flex-row gap-6">
-            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 flex-1">
+          <div className="flex flex-col md:flex-row gap-6 text-white">
+            <div className="bg-gradient-to-r from-emerald-600 to-blue-600 backdrop-blur-sm rounded-lg p-6 flex-1">
               <h3 className="font-bold text-lg mb-2">Duration</h3>
               <p className="text-3xl font-bold mb-2">10 Days</p>
               <ul className="space-y-1">
@@ -184,7 +184,7 @@ const handleSubmit = async (e) => {
               </ul>
             </div>
             
-            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 flex-1">
+            <div className="bg-gradient-to-r from-emerald-600 to-blue-600 backdrop-blur-sm rounded-lg p-6 flex-1">
               <h3 className="font-bold text-lg mb-2">Fees</h3>
               <div className="flex flex-col">
                 <div className="flex items-baseline mb-2">
@@ -406,7 +406,7 @@ const handleSubmit = async (e) => {
         </section>
 
         {/* CTA */}
-        <section className="text-center py-12 px-4 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl shadow-xl">
+        <section className="text-center py-12 px-4 bg-gradient-to-r from-emerald-600 to-blue-600  rounded-2xl shadow-xl">
           <h2 className="text-3xl font-bold text-white mb-4">Start Your Artistic Journey Today</h2>
           <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
             Unleash your creativity with our intensive 10-day program

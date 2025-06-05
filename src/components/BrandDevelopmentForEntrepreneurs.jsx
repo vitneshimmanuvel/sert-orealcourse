@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const BrandDevelopmentForEntrepreneurs = () => {
-    const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -39,44 +39,43 @@ const BrandDevelopmentForEntrepreneurs = () => {
     return Object.keys(newErrors).length === 0;
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (validateForm()) {
+      setIsSubmitting(true); // Set loading state
+      try {
+        const response = await fetch('http://localhost:3000/api/course-enrollment', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            phone: formData.phone,
+            email: formData.email,
+            courseName: 'Brand Development for Entrepreneurs'
+          }),
+        });
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  
-  if (validateForm()) {
-    setIsSubmitting(true); // Set loading state
-    try {
-      const response = await fetch('http://localhost:3000/api/course-enrollment', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email,
-          courseName: 'Brand Development for Entrepreneurs'
-        }),
-      });
-
-      const data = await response.json();
-      
-      if (response.ok) {
-        console.log('Server response:', data);
-        alert('Enrollment submitted successfully!');
-        setShowModal(false);
-        setFormData({ name: '', phone: '', email: '' });
-      } else {
-        throw new Error(data.message || 'Failed to submit enrollment');
+        const data = await response.json();
+        
+        if (response.ok) {
+          console.log('Server response:', data);
+          alert('Enrollment submitted successfully!');
+          setShowModal(false);
+          setFormData({ name: '', phone: '', email: '' });
+        } else {
+          throw new Error(data.message || 'Failed to submit enrollment');
+        }
+      } catch (error) {
+        console.error('Error submitting form:', error);
+        alert('Failed to submit enrollment. Please try again.');
+      } finally {
+        setIsSubmitting(false); // Clear loading state
       }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      alert('Failed to submit enrollment. Please try again.');
-    } finally {
-      setIsSubmitting(false); // Clear loading state
     }
-  }
-};
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -101,14 +100,14 @@ const handleSubmit = async (e) => {
     if (!/^[a-zA-Z\s]$/.test(char) && !['Backspace', 'Tab', 'ArrowLeft', 'ArrowRight'].includes(char)) {
       e.preventDefault();
     }
-  }
+  };
 
   const allowOnlyNumbers = (e) => {
     const char = e.key;
     if (!/^\d$/.test(char) && !['Backspace', 'Tab', 'ArrowLeft', 'ArrowRight'].includes(char)) {
       e.preventDefault();
     }
-  }
+  };
 
   const modules = [
     {
@@ -165,10 +164,10 @@ const handleSubmit = async (e) => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 text-gray-800">
-      <header className="bg-gradient-to-r from-amber-700 to-orange-700 text-white py-16 px-4">
+      <header className=" to-blue-600 text-black py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center mb-8">
-            <div className="bg-gradient-to-br from-amber-500 to-orange-500 rounded-full w-20 h-20 flex items-center justify-center mb-6 md:mb-0 md:mr-10">
+            <div className="bg-gradient-to-br from-emerald-600 to-blue-600 rounded-full w-20 h-20 flex items-center justify-center mb-6 md:mb-0 md:mr-10">
               <span className="text-3xl font-bold">BD</span>
             </div>
             <div>
@@ -179,8 +178,8 @@ const handleSubmit = async (e) => {
             </div>
           </div>
           
-          <div className="flex flex-col md:flex-row gap-6">
-            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 flex-1">
+          <div className="flex flex-col md:flex-row gap-6 text-white">
+            <div className="bg-gradient-to-r from-emerald-600 to-blue-600 backdrop-blur-sm rounded-lg p-6 flex-1">
               <h3 className="font-bold text-lg mb-2">Duration</h3>
               <p className="text-3xl font-bold mb-2">20 Days</p>
               <ul className="space-y-1">
@@ -199,7 +198,7 @@ const handleSubmit = async (e) => {
               </ul>
             </div>
             
-            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 flex-1">
+            <div className="bg-gradient-to-r from-emerald-600 to-blue-600 backdrop-blur-sm rounded-lg p-6 flex-1">
               <h3 className="font-bold text-lg mb-2">Fees</h3>
               <div className="flex flex-col">
                 <div className="flex items-baseline mb-2">
@@ -208,9 +207,9 @@ const handleSubmit = async (e) => {
                 </div>
                 
               </div>
-              <div className="mt-4 p-3 bg-amber-800/30 rounded-lg">
+              <div className="mt-4 p-3 bg-emerald-800/30 rounded-lg">
                 <p className="font-medium">Includes FREE access to:</p>
-                <p className="font-bold text-amber-200">Basic Brand Pro Course</p>
+                <p className="font-bold text-emerald-200">Basic Brand Pro Course</p>
               </div>
             </div>
           </div>
@@ -220,7 +219,7 @@ const handleSubmit = async (e) => {
       <main className="max-w-6xl mx-auto px-4 py-12">
         {/* Introduction */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6 text-gray-900 border-l-4 border-amber-500 pl-4">Course Introduction</h2>
+          <h2 className="text-3xl font-bold mb-6 text-gray-900 border-l-4 border-emerald-500 pl-4">Course Introduction</h2>
           <div className="bg-white rounded-xl shadow-lg p-6">
             <p className="text-lg mb-4">
               Brand development is essential for entrepreneurs aiming to create a lasting and memorable impression in the market. This course empowers entrepreneurs to build a brand from scratch, focusing on core elements like identity, positioning, and audience engagement.
@@ -231,36 +230,17 @@ const handleSubmit = async (e) => {
           </div>
         </section>
 
-        {/* Prerequisites */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6 text-gray-900 border-l-4 border-amber-500 pl-4">Pre-requisites</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-6 border border-gray-200">
-              <h3 className="text-xl font-semibold mb-3 text-amber-700">Required</h3>
-              <p className="text-lg">No prior experience needed</p>
-            </div>
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-6 border border-gray-200">
-              <h3 className="text-xl font-semibold mb-3 text-orange-700">Helpful</h3>
-              <p className="text-lg">Passion for creating and growing a brand</p>
-            </div>
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-6 border border-gray-200">
-              <h3 className="text-xl font-semibold mb-3 text-amber-700">Bonus</h3>
-              <p className="text-lg">Basic understanding of business concepts</p>
-            </div>
-          </div>
-        </section>
-
         {/* Modules */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6 text-gray-900 border-l-4 border-amber-500 pl-4">Course Modules</h2>
+          <h2 className="text-3xl font-bold mb-6 text-gray-900 border-l-4 border-emerald-500 pl-4">Course Modules</h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Module Navigation */}
             <div className="lg:col-span-1 bg-white rounded-xl shadow-lg p-6">
-              <h3 className="text-xl font-semibold mb-4 text-amber-700">Module Overview</h3>
-              <div className="mb-4 p-4 bg-amber-50 rounded-lg border border-amber-200">
-                <p className="font-medium text-amber-800">FREE with enrollment:</p>
-                <p className="font-bold text-amber-900">Basic Brand Pro Course</p>
+              <h3 className="text-xl font-semibold mb-4 text-emerald-700">Module Overview</h3>
+              <div className="mb-4 p-4 bg-emerald-50 rounded-lg border border-emerald-200">
+                <p className="font-medium text-emerald-800">FREE with enrollment:</p>
+                <p className="font-bold text-emerald-900">Basic Brand Pro Course</p>
               </div>
               <ul className="space-y-2">
                 {modules.map((module, index) => (
@@ -269,7 +249,7 @@ const handleSubmit = async (e) => {
                       onClick={() => setActiveModule(index)}
                       className={`w-full text-left px-4 py-3 rounded-lg transition-all ${
                         activeModule === index 
-                          ? 'bg-gradient-to-r from-amber-600 to-orange-600 text-white shadow-lg' 
+                          ? 'bg-gradient-to-r from-emerald-600 to-blue-600 text-white shadow-lg' 
                           : 'bg-gray-100 hover:bg-gray-200'
                       }`}
                     >
@@ -286,7 +266,7 @@ const handleSubmit = async (e) => {
                 Module {activeModule + 1}: {modules[activeModule].title}
               </h3>
               <div className="mb-4">
-                <span className="inline-block bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-medium">
+                <span className="inline-block bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-sm font-medium">
                   Objective
                 </span>
               </div>
@@ -296,7 +276,7 @@ const handleSubmit = async (e) => {
               <ul className="space-y-3">
                 {modules[activeModule].topics.map((topic, index) => (
                   <li key={index} className="flex items-start">
-                    <span className="inline-block mt-1.5 w-5 h-5 rounded-full bg-amber-500 mr-3 flex-shrink-0"></span>
+                    <span className="inline-block mt-1.5 w-5 h-5 rounded-full bg-emerald-500 mr-3 flex-shrink-0"></span>
                     <span className="text-lg">{topic}</span>
                   </li>
                 ))}
@@ -307,71 +287,71 @@ const handleSubmit = async (e) => {
 
         {/* Outcomes */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6 text-gray-900 border-l-4 border-amber-500 pl-4">Learning Outcomes</h2>
+          <h2 className="text-3xl font-bold mb-6 text-gray-900 border-l-4 border-emerald-500 pl-4">Learning Outcomes</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-6 border border-gray-200">
-              <h3 className="text-xl font-semibold mb-4 text-amber-700">Course Outcomes</h3>
+            <div className="bg-gradient-to-br from-blue-50 to-emerald-50 rounded-xl p-6 border border-gray-200">
+              <h3 className="text-xl font-semibold mb-4 text-blue-700">Course Outcomes</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <span className="text-amber-500 mr-2">✓</span>
+                  <span className="text-emerald-500 mr-2">✓</span>
                   <span>Ability to create a strong brand identity</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-amber-500 mr-2">✓</span>
+                  <span className="text-emerald-500 mr-2">✓</span>
                   <span>Expertise in brand positioning and market research</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-amber-500 mr-2">✓</span>
+                  <span className="text-emerald-500 mr-2">✓</span>
                   <span>Skills in brand communication</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-amber-500 mr-2">✓</span>
+                  <span className="text-emerald-500 mr-2">✓</span>
                   <span>Proficiency in creating a brand story and message</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-amber-500 mr-2">✓</span>
+                  <span className="text-emerald-500 mr-2">✓</span>
                   <span>Understanding of digital and offline brand strategies</span>
                 </li>
               </ul>
             </div>
             
-            <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl p-6 border border-gray-200">
-              <h3 className="text-xl font-semibold mb-4 text-orange-700">Career Opportunities</h3>
+            <div className="bg-gradient-to-br from-blue-50 to-emerald-50 rounded-xl p-6 border border-gray-200">
+              <h3 className="text-xl font-semibold mb-4 text-emerald-700">Career Opportunities</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <span className="text-orange-600 mr-2">•</span>
+                  <span className="text-blue-600 mr-2">•</span>
                   <span>Brand Manager</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-orange-600 mr-2">•</span>
+                  <span className="text-blue-600 mr-2">•</span>
                   <span>Marketing Strategist</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-orange-600 mr-2">•</span>
+                  <span className="text-blue-600 mr-2">•</span>
                   <span>Digital Brand Specialist</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-orange-600 mr-2">•</span>
+                  <span className="text-blue-600 mr-2">•</span>
                   <span>Product Brand Developer</span>
                 </li>
               </ul>
-              <h3 className="text-xl font-semibold mt-6 mb-3 text-orange-700">Entrepreneurial Opportunities</h3>
+              <h3 className="text-xl font-semibold mt-6 mb-3 text-emerald-700">Entrepreneurial Opportunities</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <span className="text-orange-600 mr-2">•</span>
+                  <span className="text-blue-600 mr-2">•</span>
                   <span>Offer brand consultancy to startups</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-orange-600 mr-2">•</span>
+                  <span className="text-blue-600 mr-2">•</span>
                   <span>Create brand identity packages</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-orange-600 mr-2">•</span>
+                  <span className="text-blue-600 mr-2">•</span>
                   <span>Develop your own personal brand</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-orange-600 mr-2">•</span>
+                  <span className="text-blue-600 mr-2">•</span>
                   <span>Lead brand development workshops</span>
                 </li>
               </ul>
@@ -381,9 +361,9 @@ const handleSubmit = async (e) => {
 
         {/* Certification */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6 text-gray-900 border-l-4 border-amber-500 pl-4">Certification</h2>
+          <h2 className="text-3xl font-bold mb-6 text-gray-900 border-l-4 border-emerald-500 pl-4">Certification</h2>
           
-          <div className="bg-gradient-to-r from-amber-700 to-orange-700 text-white rounded-xl p-8 shadow-xl">
+          <div className="bg-gradient-to-r from-blue-900 to-emerald-800 text-white rounded-xl p-8 shadow-xl">
             <div className="max-w-4xl mx-auto">
               <h3 className="text-2xl font-bold mb-4">Globally Recognized Certification</h3>
               <p className="text-xl mb-6">
@@ -432,7 +412,7 @@ const handleSubmit = async (e) => {
         </section>
 
         {/* CTA */}
-        <section className="text-center py-12 px-4 bg-gradient-to-r from-amber-600 to-orange-600 rounded-2xl shadow-xl">
+        <section className="text-center py-12 px-4 bg-gradient-to-r from-emerald-600 to-blue-600 rounded-2xl shadow-xl">
           <h2 className="text-3xl font-bold text-white mb-4">Build Your Brand Today</h2>
           <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
             Transform your business with a powerful brand identity in just 20 days
@@ -440,7 +420,7 @@ const handleSubmit = async (e) => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
               onClick={() => setShowModal(true)}
-              className="bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold px-8 py-4 rounded-full text-lg hover:from-amber-600 hover:to-amber-700 transition-all shadow-lg hover:shadow-xl"
+              className="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-bold px-8 py-4 rounded-full text-lg hover:from-emerald-600 hover:to-emerald-700 transition-all shadow-lg hover:shadow-xl"
             >
               Enroll Now 
             </button>
@@ -482,7 +462,7 @@ const handleSubmit = async (e) => {
                     onChange={handleChange}
                     className={`w-full px-4 py-3 rounded-lg border ${
                       errors.name ? 'border-red-500' : 'border-gray-300'
-                    } focus:outline-none focus:ring-2 focus:ring-amber-500`}
+                    } focus:outline-none focus:ring-2 focus:ring-emerald-500`}
                     placeholder="Enter your full name"
                   />
                   {errors.name && (
@@ -503,7 +483,7 @@ const handleSubmit = async (e) => {
                     onChange={handleChange}
                     className={`w-full px-4 py-3 rounded-lg border ${
                       errors.phone ? 'border-red-500' : 'border-gray-300'
-                    } focus:outline-none focus:ring-2 focus:ring-amber-500`}
+                    } focus:outline-none focus:ring-2 focus:ring-emerald-500`}
                     placeholder="Enter 10-digit phone number"
                   />
                   {errors.phone && (
@@ -523,7 +503,7 @@ const handleSubmit = async (e) => {
                     onChange={handleChange}
                     className={`w-full px-4 py-3 rounded-lg border ${
                       errors.email ? 'border-red-500' : 'border-gray-300'
-                    } focus:outline-none focus:ring-2 focus:ring-amber-500`}
+                    } focus:outline-none focus:ring-2 focus:ring-emerald-500`}
                     placeholder="Enter your email"
                   />
                   {errors.email && (
@@ -552,16 +532,16 @@ const handleSubmit = async (e) => {
         </div>
       )}
 
-      <footer className="bg-gradient-to-r from-amber-700 to-orange-700 text-white py-12 px-4">
+      <footer className="bg-black text-white py-12 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center">
             <div className="flex justify-center mb-4">
-              <div className="bg-gradient-to-br from-amber-500 to-orange-500 rounded-full w-16 h-16 flex items-center justify-center">
+              <div className="bg-gradient-to-br from-emerald-600 to-blue-600 rounded-full w-16 h-16 flex items-center justify-center">
                 <span className="text-2xl font-bold">BD</span>
               </div>
             </div>
             <p className="text-lg">© 2025 settlo academy all rights reserved.</p>
-            <p className="mt-2 text-amber-200">Empowering entrepreneurs to build memorable brands</p>
+            <p className="mt-2 text-emerald-200">Designed with passion for creative education</p>
           </div>
         </div>
       </footer>

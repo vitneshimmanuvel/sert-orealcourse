@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-const ContentMarketingMastery = () => {
-    const [isSubmitting, setIsSubmitting] = useState(false);
+const FrontEndDevelopment = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -14,21 +14,18 @@ const ContentMarketingMastery = () => {
   const validateForm = () => {
     const newErrors = {};
     
-    // Name validation (only letters and spaces)
     if (!formData.name.trim()) {
       newErrors.name = 'Name is required';
     } else if (!/^[a-zA-Z\s]+$/.test(formData.name)) {
       newErrors.name = 'Name should contain only letters and spaces';
     }
     
-    // Phone validation (exactly 10 digits)
     if (!formData.phone) {
       newErrors.phone = 'Phone is required';
     } else if (!/^\d{10}$/.test(formData.phone)) {
       newErrors.phone = 'Phone must be 10 digits';
     }
     
-    // Email validation
     if (!formData.email) {
       newErrors.email = 'Email is required';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
@@ -39,48 +36,47 @@ const ContentMarketingMastery = () => {
     return Object.keys(newErrors).length === 0;
   };
 
- const handleSubmit = async (e) => {
-  e.preventDefault();
-  
-  if (validateForm()) {
-    setIsSubmitting(true); // Set loading state
-    try {
-      const response = await fetch('http://localhost:3000/api/course-enrollment', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email,
-          courseName: 'Content Marketing Mastery'
-        }),
-      });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (validateForm()) {
+      setIsSubmitting(true); // Set loading state
+      try {
+        const response = await fetch('http://localhost:3000/api/course-enrollment', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            phone: formData.phone,
+            email: formData.email,
+            courseName: 'Front-End Development',
+          }),
+        });
 
-      const data = await response.json();
-      
-      if (response.ok) {
-        console.log('Server response:', data);
-        alert('Enrollment submitted successfully!');
-        setShowModal(false);
-        setFormData({ name: '', phone: '', email: '' });
-      } else {
-        throw new Error(data.message || 'Failed to submit enrollment');
+        const data = await response.json();
+        
+        if (response.ok) {
+          console.log('Server response:', data);
+          alert('Enrollment submitted successfully!');
+          setShowModal(false);
+          setFormData({ name: '', phone: '', email: '' });
+        } else {
+          throw new Error(data.message || 'Failed to submit enrollment');
+        }
+      } catch (error) {
+        console.error('Error submitting form:', error);
+        alert('Failed to submit enrollment. Please try again.');
+      } finally {
+        setIsSubmitting(false); // Clear loading state
       }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      alert('Failed to submit enrollment. Please try again.');
-    } finally {
-      setIsSubmitting(false); // Clear loading state
     }
-  }
-};
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     
-    // For phone field, only allow numbers and limit to 10 digits
     if (name === 'phone') {
       if (value === '' || /^\d{0,10}$/.test(value)) {
         setFormData({ ...formData, [name]: value });
@@ -89,7 +85,6 @@ const ContentMarketingMastery = () => {
       setFormData({ ...formData, [name]: value });
     }
     
-    // Clear error when user types
     if (errors[name]) {
       setErrors({ ...errors, [name]: '' });
     }
@@ -100,80 +95,81 @@ const ContentMarketingMastery = () => {
     if (!/^[a-zA-Z\s]$/.test(char) && !['Backspace', 'Tab', 'ArrowLeft', 'ArrowRight'].includes(char)) {
       e.preventDefault();
     }
-  }
+  };
 
   const allowOnlyNumbers = (e) => {
     const char = e.key;
     if (!/^\d$/.test(char) && !['Backspace', 'Tab', 'ArrowLeft', 'ArrowRight'].includes(char)) {
       e.preventDefault();
     }
-  }
+  };
 
   const modules = [
     {
-      title: "Introduction to Content Marketing",
-      objective: "Get a solid foundation in content marketing and understand its impact on brand visibility.",
+      title: "Introduction to Front-End Development",
+      objective: "Understand the basics of front-end development and its role in web development.",
       topics: [
-        "What is content marketing?",
-        "The importance of content in digital strategy",
-        "Types of content marketing",
-        "Overview of content marketing goals and KPIs"
+        "What is front-end development?",
+        "Key terms: HTML, CSS, JavaScript",
+        "Tools used in front-end development",
+        "The lifecycle of a website"
       ]
     },
     {
-      title: "Content Strategy Development",
-      objective: "Learn how to create an effective content marketing strategy that aligns with business objectives.",
+      title: "HTML Fundamentals",
+      objective: "Learn the basics of HTML and how to structure web pages.",
       topics: [
-        "Steps to develop a content strategy",
-        "Audience research and persona creation",
-        "Content mapping across the buyer's journey",
-        "Setting content marketing goals and KPIs"
+        "HTML tags and elements",
+        "HTML attributes and attributes manipulation",
+        "Creating basic web pages using HTML",
+        "Introduction to semantic HTML"
       ]
     },
     {
-      title: "Content Creation Techniques",
-      objective: "Master different content creation methods to produce engaging and relevant material.",
+      title: "CSS Fundamentals",
+      objective: "Explore the basics of CSS and learn how to style web pages.",
       topics: [
-        "Content types (blogs, social media, videos, podcasts, infographics)",
-        "Writing for web and SEO",
-        "Visual content creation tools",
-        "Importance of multimedia content"
+        "Introduction to CSS syntax and rules",
+        "CSS selectors and properties",
+        "Applying styles to web pages",
+        "Basic and advanced CSS techniques"
       ]
     },
     {
-      title: "Content Distribution & Promotion",
-      objective: "Discover the most effective ways to distribute content across different channels.",
+      title: "Building Responsive Web Designs",
+      objective: "Gain hands-on experience in creating responsive designs that work on various devices.",
       topics: [
-        "Channels for content distribution (social media, email, SEO)",
-        "Paid vs. organic content promotion",
-        "Leveraging social media for content visibility",
-        "Building an email marketing strategy"
+        "Introduction to responsive web design",
+        "Using CSS media queries",
+        "Implementing flexible grid systems",
+        "Designing for mobile and desktop"
       ]
     },
     {
-      title: "Content Analytics and Optimization",
-      objective: "Learn how to measure content performance and make data-driven decisions for content improvement.",
+      title: "Advanced Front-End Development",
+      objective: "Master advanced front-end development techniques and tools.",
       topics: [
-        "Key content marketing metrics and tools",
-        "Analyzing content performance",
-        "A/B testing and content optimization",
-        "Building a data-driven content strategy"
+        "Advanced CSS techniques",
+        "Introduction to CSS frameworks (Bootstrap)",
+        "Using front-end libraries (React)",
+        "Creating interactive web pages"
       ]
     }
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 text-gray-800">
-      <header className=" to-blue-600 text-black py-16 px-4">
+      {/* Header */}
+      <header className=" text-black py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center mb-8">
-            <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-full w-20 h-20 flex items-center justify-center mb-6 md:mb-0 md:mr-10">
-              <span className="text-3xl font-bold">CM</span>
+            <div className="bg-gradient-to-br from-emerald-600 to-blue-600 rounded-full w-20 h-20 flex items-center justify-center mb-6 md:mb-0 md:mr-10">
+              <span className="text-3xl font-bold">FE</span>
             </div>
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-2">Content Marketing Mastery</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-2">Front-End Development</h1>
               <p className="text-xl max-w-3xl">
-                Transform your digital presence with our intensive 1-month program in Content Marketing
+                Build responsive and interactive web interfaces with HTML & CSS
               </p>
             </div>
           </div>
@@ -184,16 +180,16 @@ const ContentMarketingMastery = () => {
               <p className="text-3xl font-bold mb-2">1 Month</p>
               <ul className="space-y-1">
                 <li className="flex items-center">
-                  <span className="mr-2">•</span> 30 Days – 2 hours of daily interactive sessions
-                </li> 
-                <li className="flex items-center">
-                  <span className="mr-2">•</span> 10 live sessions
+                  <span className="mr-2">•</span> 4 weeks of focused learning
                 </li>
                 <li className="flex items-center">
-                  <span className="mr-2">•</span> 5 practical assignments
+                  <span className="mr-2">•</span> 4 live sessions
                 </li>
                 <li className="flex items-center">
-                  <span className="mr-2">•</span> 1 final content marketing campaign
+                  <span className="mr-2">•</span> 8 practical assignments
+                </li>
+                <li className="flex items-center">
+                  <span className="mr-2">•</span> 1 capstone project
                 </li>
               </ul>
             </div>
@@ -202,10 +198,10 @@ const ContentMarketingMastery = () => {
               <h3 className="font-bold text-lg mb-2">Fees</h3>
               <div className="flex flex-col">
                 <div className="flex items-baseline mb-2">
-                  <span className="text-2xl font-bold mr-2">₹15,000 /-</span>
+                  <span className="text-2xl font-bold mr-2">₹10,000 /-</span>
                   <span className="text-gray-200">INR</span>
                 </div>
-                
+               
               </div>
             </div>
           </div>
@@ -218,10 +214,10 @@ const ContentMarketingMastery = () => {
           <h2 className="text-3xl font-bold mb-6 text-gray-900 border-l-4 border-emerald-500 pl-4">Course Introduction</h2>
           <div className="bg-white rounded-xl shadow-lg p-6">
             <p className="text-lg mb-4">
-              In today's digital age, content is king! This course dives deep into the world of content marketing, teaching you how to create, distribute, and optimize high-quality content that drives audience engagement, brand awareness, and leads.
+              Front-end development focuses on creating the visual and interactive elements of websites that users interact with. This course introduces you to HTML, CSS, and responsive web design, giving you a strong foundation in front-end development.
             </p>
             <p className="text-lg">
-              Learn the essentials of content strategy, writing, and multimedia creation to stand out in the crowded online space. This course will empower you with the skills necessary to pursue a career in content marketing or enhance your business's digital presence.
+              From learning HTML and CSS fundamentals to developing complete front-end applications, this course prepares you to excel in creating engaging web experiences.
             </p>
           </div>
         </section>
@@ -232,11 +228,11 @@ const ContentMarketingMastery = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-gradient-to-br from-blue-50 to-emerald-50 rounded-xl p-6 border border-gray-200">
               <h3 className="text-xl font-semibold mb-3 text-blue-700">Required</h3>
-              <p className="text-lg">Basic understanding of digital media</p>
+              <p className="text-lg">No prior coding experience required</p>
             </div>
             <div className="bg-gradient-to-br from-blue-50 to-emerald-50 rounded-xl p-6 border border-gray-200">
               <h3 className="text-xl font-semibold mb-3 text-emerald-700">Helpful</h3>
-              <p className="text-lg">Familiarity with online platforms and interest in content creation and marketing</p>
+              <p className="text-lg">Interest in web development</p>
             </div>
           </div>
         </section>
@@ -302,64 +298,64 @@ const ContentMarketingMastery = () => {
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <span className="text-emerald-500 mr-2">✓</span>
-                  <span>Ability to create high-impact content</span>
+                  <span>Proficiency in HTML and CSS</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-emerald-500 mr-2">✓</span>
-                  <span>Expertise in content strategy planning</span>
+                  <span>Ability to create responsive and functional web pages</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-emerald-500 mr-2">✓</span>
-                  <span>Skills in content optimization for search engines</span>
+                  <span>Understanding front-end development principles</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-emerald-500 mr-2">✓</span>
-                  <span>Proficiency in multimedia content tools</span>
+                  <span>Building interactive web interfaces using CSS and JavaScript</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-emerald-500 mr-2">✓</span>
-                  <span>Proficiency in creating targeted content across multiple platforms</span>
+                  <span>Work on real-world front-end development projects</span>
                 </li>
               </ul>
             </div>
             
-            <div className="bg-gradient-to-br from-emerald-50 to-blue-50 rounded-xl p-6 border border-gray-200">
+            <div className="bg-gradient-to-br from-blue-50 to-emerald-50 rounded-xl p-6 border border-gray-200">
               <h3 className="text-xl font-semibold mb-4 text-emerald-700">Career Opportunities</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-2">•</span>
-                  <span>Content Marketer</span>
+                  <span>Front-end Developer</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-2">•</span>
-                  <span>Social Media Manager</span>
+                  <span>UI Designer</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-2">•</span>
-                  <span>Copywriter</span>
+                  <span>Web Developer</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-2">•</span>
-                  <span>Content Strategist</span>
+                  <span>UI/UX Specialist</span>
                 </li>
               </ul>
-              <h3 className="text-xl font-semibold mt-6 mb-3 text-emerald-700">Entrepreneurial Opportunities</h3>
+              <h3 className="text-xl font-semibold mt-6 mb-3 text-blue-600">Entrepreneurial Opportunities</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-2">•</span>
-                  <span>Offer content marketing services to startups and small businesses</span>
+                  <span>Start a web development agency</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-2">•</span>
-                  <span>Create content for digital agencies and platforms</span>
+                  <span>Offer freelance front-end development services</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-2">•</span>
-                  <span>Build an audience through personal content creation</span>
+                  <span>Build and sell custom web solutions</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-2">•</span>
-                  <span>Start a content-based online business</span>
+                  <span>Collaborate with digital agencies</span>
                 </li>
               </ul>
             </div>
@@ -370,11 +366,11 @@ const ContentMarketingMastery = () => {
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-6 text-gray-900 border-l-4 border-emerald-500 pl-4">Certification</h2>
           
-          <div className="bg-gradient-to-r from-emerald-600 to-blue-600 text-white rounded-xl p-8 shadow-xl">
+          <div className="bg-gradient-to-r from-blue-900 to-emerald-800 text-white rounded-xl p-8 shadow-xl">
             <div className="max-w-4xl mx-auto">
-              <h3 className="text-2xl font-bold mb-4">Let Your Certificate Speak</h3>
+              <h3 className="text-2xl font-bold mb-4">Globally Recognized Certification</h3>
               <p className="text-xl mb-6">
-                Upon successful completion, you will receive a certificate validating your expertise in content marketing.
+                Upon completing this course, you'll receive a certificate validating your expertise in front-end development and responsive web design.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -383,11 +379,15 @@ const ContentMarketingMastery = () => {
                   <ul className="space-y-2">
                     <li className="flex items-start">
                       <span className="text-yellow-400 mr-2">★</span>
-                      <span>Knowledge in content strategy, creation, and distribution</span>
+                      <span>Expertise in front-end development</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-yellow-400 mr-2">★</span>
-                      <span>Skills in driving content-driven business results</span>
+                      <span>Ability to create responsive web designs</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-yellow-400 mr-2">★</span>
+                      <span>Proficiency in HTML and CSS</span>
                     </li>
                   </ul>
                 </div>
@@ -401,7 +401,11 @@ const ContentMarketingMastery = () => {
                     </li>
                     <li className="flex items-start">
                       <span className="text-yellow-400 mr-2">★</span>
-                      <span>Access to ready-made templates and guides</span>
+                      <span>Early access to new courses and enrollment benefits</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-yellow-400 mr-2">★</span>
+                      <span>Portfolio review by industry experts</span>
                     </li>
                   </ul>
                 </div>
@@ -411,10 +415,10 @@ const ContentMarketingMastery = () => {
         </section>
 
         {/* CTA */}
-        <section className="text-center py-12 px-4 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-2xl shadow-xl">
-          <h2 className="text-3xl font-bold text-white mb-4">Start Your Content Marketing Journey Today</h2>
+        <section className="text-center py-12 px-4 bg-gradient-to-r from-emerald-600 to-blue-600 rounded-2xl shadow-xl">
+          <h2 className="text-3xl font-bold text-white mb-4">Start Your Front-End Journey Today</h2>
           <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
-            Master the art of compelling content with our intensive 1-month program
+            Build responsive and interactive web interfaces with our intensive 1-month program
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
@@ -509,11 +513,10 @@ const ContentMarketingMastery = () => {
                     <p className="mt-1 text-red-500 text-sm">{errors.email}</p>
                   )}
                 </div>
-                
                  <div className="flex justify-end">
                         <button
                             type="submit"
-                            className="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-bold px-6 py-3 rounded-lg hover:from-emerald-600 hover:to-emerald-700 transition-all shadow-md"
+                            className="bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold px-6 py-3 rounded-lg hover:from-purple-600 hover:to-purple-700 transition-all shadow-md"
                             disabled={isSubmitting}
                         >
                             {isSubmitting ? (
@@ -531,16 +534,16 @@ const ContentMarketingMastery = () => {
         </div>
       )}
 
-      <footer className="bg-black text-white py-12 px-4">
+      <footer className="bg-gradient-to-r from-emerald-600 to-blue-600 text-white py-12 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center">
             <div className="flex justify-center mb-4">
-              <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-full w-16 h-16 flex items-center justify-center">
-                <span className="text-2xl font-bold">CM</span>
+              <div className="bg-gradient-to-br from-emerald-600 to-blue-600 rounded-full w-16 h-16 flex items-center justify-center">
+                <span className="text-2xl font-bold">FE</span>
               </div>
             </div>
             <p className="text-lg">© 2025 settlo academy all rights reserved.</p>
-            <p className="mt-2 text-emerald-200">Designed with passion for creative education</p>
+            <p className="mt-2 text-emerald-200">Master the art of creating engaging web experiences</p>
           </div>
         </div>
       </footer>
@@ -548,4 +551,4 @@ const ContentMarketingMastery = () => {
   );
 };
 
-export default ContentMarketingMastery;
+export default FrontEndDevelopment;
