@@ -178,7 +178,7 @@ const ContentMarketingMastery = () => {
             </div>
           </div>
           
-          <div className="flex flex-col md:flex-row gap-6 text-black">
+          <div className="flex flex-col md:flex-row gap-6 text-white">
             <div className="bg-gradient-to-br from-emerald-600 to-blue-600 backdrop-blur-sm rounded-lg p-6 flex-1">
               <h3 className="font-bold text-lg mb-2">Duration</h3>
               <p className="text-3xl font-bold mb-2">1 Month</p>
