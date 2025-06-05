@@ -149,7 +149,7 @@ const handleSubmit = async (e) => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-yellow-50 to-orange-50 text-gray-800">
+    <div className="min-h-screen bg-gradient-to-b bg-white text-gray-800">
       <header className="  text-black py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center mb-8">
