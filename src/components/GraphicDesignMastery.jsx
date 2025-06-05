@@ -41,7 +41,7 @@ const handleSubmit = async (e) => {
   if (validateForm()) {
     setIsSubmitting(true); // Set loading state
     try {
-      const response = await fetch('http://localhost:3000/api/course-enrollment', {
+      const response = await fetch('https://settlo-forms-notlead.onrender.com/api/course-enrollment', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

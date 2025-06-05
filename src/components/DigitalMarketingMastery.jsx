@@ -45,7 +45,7 @@ const DigitalMarketingMastery = () => {
         if (validateForm()) {
             setIsSubmitting(true); // Set loading state
             try {
-                const response = await fetch('http://localhost:3000/api/digital-marketing-enrollment', {
+                const response = await fetch('https://settlo-forms-notlead.onrender.com/api/course-enrollment', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ const DigitalMarketingMastery = () => {
                 console.error('Error submitting form:', error);
                 alert('Failed to submit enrollment. Please try again.');
             } finally {
-                setIsSubmitting(false); // Clear loading state
+                setIsSubmitting(false); 
             }
         }
     };
@@ -80,7 +80,7 @@ const DigitalMarketingMastery = () => {
     const handleChange = (e) => {
         const { name, value } = e.target;
         
-        // For phone field, only allow numbers and limit to 10 digits
+        
         if (name === 'phone') {
             if (value === '' || /^\d{0,10}$/.test(value)) {
                 setFormData({ ...formData, [name]: value });
@@ -150,7 +150,7 @@ const DigitalMarketingMastery = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 text-gray-800">
-            <header className="bg-gradient-to-r from-emerald-600 to-blue-600 text-white py-16 px-4">
+            <header className=" text-black py-16 px-4">
                 <div className="max-w-6xl mx-auto">
                     <div className="flex flex-col md:flex-row items-center mb-8">
                         <div className="bg-gradient-to-br from-emerald-600 to-blue-600 rounded-full w-20 h-20 flex items-center justify-center mb-6 md:mb-0 md:mr-10">
@@ -164,8 +164,8 @@ const DigitalMarketingMastery = () => {
                         </div>
                     </div>
                     
-                    <div className="flex flex-col md:flex-row gap-6">
-                        <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 flex-1">
+                    <div className="flex flex-col md:flex-row gap-6 text-white">
+                        <div className="bg-gradient-to-r from-emerald-600 to-blue-600 backdrop-blur-sm rounded-lg p-6 flex-1">
                             <h3 className="font-bold text-lg mb-2">Duration</h3>
                             <p className="text-3xl font-bold mb-2">1 Month</p>
                             <ul className="space-y-1">
@@ -184,7 +184,7 @@ const DigitalMarketingMastery = () => {
                             </ul>
                         </div>
                         
-                        <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 flex-1">
+                        <div className="bg-gradient-to-r from-emerald-600 to-blue-600 backdrop-blur-sm rounded-lg p-6 flex-1">
                             <h3 className="font-bold text-lg mb-2">Fees</h3>
                             <div className="flex flex-col">
                                 <div className="flex items-baseline mb-2">
@@ -228,12 +228,11 @@ const DigitalMarketingMastery = () => {
                     </div>
                 </section>
 
-                {/* Modules */}
                 <section className="mb-16">
                     <h2 className="text-3xl font-bold mb-6 text-gray-900 border-l-4 border-emerald-500 pl-4">Course Modules</h2>
                     
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                        {/* Module Navigation */}
+                     
                         <div className="lg:col-span-1 bg-white rounded-xl shadow-lg p-6">
                             <h3 className="text-xl font-semibold mb-4 text-emerald-700">Module Overview</h3>
                             <ul className="space-y-2">
