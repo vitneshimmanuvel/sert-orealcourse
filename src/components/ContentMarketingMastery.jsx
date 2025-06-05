@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const CartoonCaricatureMastery = () => {
+const ContentMarketingMastery = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
@@ -54,7 +54,7 @@ const CartoonCaricatureMastery = () => {
             name: formData.name,
             phone: formData.phone,
             email: formData.email,
-            courseName: 'Cartoon and Caricatures Art Mastery',
+            courseName: 'Content Marketing Mastery'
           }),
         });
 
@@ -95,98 +95,114 @@ const CartoonCaricatureMastery = () => {
     }
   };
 
+  const allowOnlyLetters = (e) => {
+    const char = e.key;
+    if (!/^[a-zA-Z\s]$/.test(char) && !['Backspace', 'Tab', 'ArrowLeft', 'ArrowRight'].includes(char)) {
+      e.preventDefault();
+    }
+  };
+
+  const allowOnlyNumbers = (e) => {
+    const char = e.key;
+    if (!/^\d$/.test(char) && !['Backspace', 'Tab', 'ArrowLeft', 'ArrowRight'].includes(char)) {
+      e.preventDefault();
+    }
+  };
+
   const modules = [
     {
-      title: "Introduction to Cartoon and Caricature",
-      objective: "Understand the fundamentals and purpose of cartoon and caricature art.",
+      title: "Introduction to Content Marketing",
+      objective: "Get a solid foundation in content marketing and understand its impact on brand visibility.",
       topics: [
-        "What is cartooning?",
-        "The history of cartoons",
-        "Differences between cartoons and caricatures",
-        "Importance of exaggeration in cartoon art"
+        "What is content marketing?",
+        "The importance of content in digital strategy",
+        "Types of content marketing",
+        "Overview of content marketing goals and KPIs"
       ]
     },
     {
-      title: "Drawing Fundamentals",
-      objective: "Strengthen your drawing foundation to create expressive characters.",
+      title: "Content Strategy Development",
+      objective: "Learn how to create an effective content marketing strategy that aligns with business objectives.",
       topics: [
-        "Basics of sketching and pencil techniques",
-        "Proportions and perspective in character drawing",
-        "Anatomy for cartoon characters",
-        "Line work and shading techniques"
+        "Steps to develop a content strategy",
+        "Audience research and persona creation",
+        "Content mapping across the buyer's journey",
+        "Setting content marketing goals and KPIs"
       ]
     },
     {
-      title: "Cartoon Character Design",
-      objective: "Learn the process of designing unique cartoon characters.",
+      title: "Content Creation Techniques",
+      objective: "Master different content creation methods to produce engaging and relevant material.",
       topics: [
-        "Brainstorming ideas for character concepts",
-        "Creating memorable cartoon faces",
-        "Adding personality through expressions",
-        "Sketching different body types"
+        "Content types (blogs, social media, videos, podcasts, infographics)",
+        "Writing for web and SEO",
+        "Visual content creation tools",
+        "Importance of multimedia content"
       ]
     },
     {
-      title: "Caricature Techniques",
-      objective: "Master the art of exaggeration to create humorous and expressive caricatures.",
+      title: "Content Distribution & Promotion",
+      objective: "Discover the most effective ways to distribute content across different channels.",
       topics: [
-        "The key elements of exaggeration",
-        "How to capture unique facial features",
-        "Working with exaggeration in expressions",
-        "Finalizing caricature drawings"
+        "Channels for content distribution (social media, email, SEO)",
+        "Paid vs. organic content promotion",
+        "Leveraging social media for content visibility",
+        "Building an email marketing strategy"
       ]
     },
     {
-      title: "Bringing Characters to Life",
-      objective: "Learn to add color and depth to your cartoon and caricature artworks.",
+      title: "Content Analytics and Optimization",
+      objective: "Learn how to measure content performance and make data-driven decisions for content improvement.",
       topics: [
-        "Digital coloring techniques for cartoons",
-        "Tools and software used in cartooning",
-        "Using templates and brushes effectively",
-        "Creating dynamic poses and scenes"
+        "Key content marketing metrics and tools",
+        "Analyzing content performance",
+        "A/B testing and content optimization",
+        "Building a data-driven content strategy"
       ]
     }
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 text-gray-800">
-      <header className="bg-gradient-to-r from-emerald-600 to-blue-600 text-white py-16 px-4">
+      <header className=" text-black py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center mb-8">
-           <img src="logo.png" alt="Logo" className=" md:mb-0 md:mr-10 w-20 transform scale-[1.5]" />
+            <div className="flex justify-center mb-4">
+              <img src="logo.png" alt="Logo" className=" md:mb-0 md:mr-10 w-20 transform scale-[1.5]" />
+            </div>
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-2">Cartoon and Caricatures Art Mastery</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-2">Content Marketing Mastery</h1>
               <p className="text-xl max-w-3xl">
-                Unleash your creativity with our intensive 10-day program in cartoon and caricature art
+                Transform your digital presence with our intensive 1-month program in Content Marketing
               </p>
             </div>
           </div>
           
-          <div className="flex flex-col md:flex-row gap-6">
-            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 flex-1">
+          <div className="flex flex-col md:flex-row gap-6 text-black">
+            <div className="bg-gradient-to-br from-emerald-600 to-blue-600 backdrop-blur-sm rounded-lg p-6 flex-1">
               <h3 className="font-bold text-lg mb-2">Duration</h3>
-              <p className="text-3xl font-bold mb-2">10 Days</p>
+              <p className="text-3xl font-bold mb-2">1 Month</p>
               <ul className="space-y-1">
                 <li className="flex items-center">
-                  <span className="mr-2">•</span> 2 hours of daily practical sessions
-                </li>
+                  <span className="mr-2">•</span> 30 Days – 2 hours of daily interactive sessions
+                </li> 
                 <li className="flex items-center">
                   <span className="mr-2">•</span> 10 live sessions
                 </li>
                 <li className="flex items-center">
-                  <span className="mr-2">•</span> 4 practical assignments
+                  <span className="mr-2">•</span> 5 practical assignments
                 </li>
                 <li className="flex items-center">
-                  <span className="mr-2">•</span> 1 final caricature creation
+                  <span className="mr-2">•</span> 1 final content marketing campaign
                 </li>
               </ul>
             </div>
             
-            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 flex-1">
+            <div className="bg-gradient-to-br from-emerald-600 to-blue-600 backdrop-blur-sm rounded-lg p-6 flex-1">
               <h3 className="font-bold text-lg mb-2">Fees</h3>
               <div className="flex flex-col">
                 <div className="flex items-baseline mb-2">
-                  <span className="text-2xl font-bold mr-2">₹5,000 /-</span>
+                  <span className="text-2xl font-bold mr-2">₹15,000 /-</span>
                   <span className="text-gray-200">INR</span>
                 </div>
               </div>
@@ -201,10 +217,10 @@ const CartoonCaricatureMastery = () => {
           <h2 className="text-3xl font-bold mb-6 text-gray-900 border-l-4 border-emerald-500 pl-4">Course Introduction</h2>
           <div className="bg-white rounded-xl shadow-lg p-6">
             <p className="text-lg mb-4">
-              Explore the world of cartoon and caricature art! This course is designed to introduce you to the fascinating realm of character creation, exaggeration, and stylization techniques used to bring characters to life. Whether you're an aspiring artist or someone looking to enhance their creative skills, this course will guide you step-by-step through the art of cartooning and caricature.
+              In today's digital age, content is king! This course dives deep into the world of content marketing, teaching you how to create, distribute, and optimize high-quality content that drives audience engagement, brand awareness, and leads.
             </p>
             <p className="text-lg">
-              By the end of this course, you will have created multiple original artworks, gained essential techniques for exaggeration, and strengthened your ability to design engaging characters.
+              Learn the essentials of content strategy, writing, and multimedia creation to stand out in the crowded online space. This course will empower you with the skills necessary to pursue a career in content marketing or enhance your business's digital presence.
             </p>
           </div>
         </section>
@@ -215,12 +231,11 @@ const CartoonCaricatureMastery = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-gradient-to-br from-blue-50 to-emerald-50 rounded-xl p-6 border border-gray-200">
               <h3 className="text-xl font-semibold mb-3 text-blue-700">Required</h3>
-              <p className="text-lg">No prior art experience needed</p>
+              <p className="text-lg">Basic understanding of digital media</p>
             </div>
             <div className="bg-gradient-to-br from-blue-50 to-emerald-50 rounded-xl p-6 border border-gray-200">
               <h3 className="text-xl font-semibold mb-3 text-emerald-700">Helpful</h3>
-              <p className="text-lg">Basic familiarity with sketching tools</p>
-              <p className="text-lg mt-2">Enthusiasm for creative expression</p>
+              <p className="text-lg">Familiarity with online platforms and interest in content creation and marketing</p>
             </div>
           </div>
         </section>
@@ -286,23 +301,23 @@ const CartoonCaricatureMastery = () => {
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <span className="text-emerald-500 mr-2">✓</span>
-                  <span>Proficiency in sketching and drawing cartoon characters</span>
+                  <span>Ability to create high-impact content</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-emerald-500 mr-2">✓</span>
-                  <span>Ability to create unique and exaggerated caricatures</span>
+                  <span>Expertise in content strategy planning</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-emerald-500 mr-2">✓</span>
-                  <span>Skills in using digital tools for coloring and artwork</span>
+                  <span>Skills in content optimization for search engines</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-emerald-500 mr-2">✓</span>
-                  <span>Understanding of facial expressions and body language</span>
+                  <span>Proficiency in multimedia content tools</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-emerald-500 mr-2">✓</span>
-                  <span>Experience in designing dynamic cartoon scenes</span>
+                  <span>Proficiency in creating targeted content across multiple platforms</span>
                 </li>
               </ul>
             </div>
@@ -312,38 +327,38 @@ const CartoonCaricatureMastery = () => {
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-2">•</span>
-                  <span>Cartoon Artist</span>
+                  <span>Content Marketer</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-2">•</span>
-                  <span>Caricature Artist</span>
+                  <span>Social Media Manager</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-2">•</span>
-                  <span>Freelance Illustrator</span>
+                  <span>Copywriter</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-2">•</span>
-                  <span>Comic Book Artist</span>
+                  <span>Content Strategist</span>
                 </li>
               </ul>
               <h3 className="text-xl font-semibold mt-6 mb-3 text-blue-600">Entrepreneurial Opportunities</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-2">•</span>
-                  <span>Offer caricature services for events and parties</span>
+                  <span>Offer content marketing services to startups and small businesses</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-2">•</span>
-                  <span>Create personalized cartoon portraits</span>
+                  <span>Create content for digital agencies and platforms</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-2">•</span>
-                  <span>Sell digital artwork and prints online</span>
+                  <span>Build an audience through personal content creation</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-2">•</span>
-                  <span>Launch cartoon-themed merchandise</span>
+                  <span>Start a content-based online business</span>
                 </li>
               </ul>
             </div>
@@ -356,9 +371,9 @@ const CartoonCaricatureMastery = () => {
           
           <div className="bg-gradient-to-r from-blue-900 to-emerald-800 text-white rounded-xl p-8 shadow-xl">
             <div className="max-w-4xl mx-auto">
-              <h3 className="text-2xl font-bold mb-4">Professional Art Certification</h3>
+              <h3 className="text-2xl font-bold mb-4">Let Your Certificate Speak</h3>
               <p className="text-xl mb-6">
-                Upon completing this Cartoon and Caricatures Art Mastery course, you will receive a professional certification that validates your artistic skills.
+                Upon successful completion, you will receive a certificate validating your expertise in content marketing.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -366,16 +381,12 @@ const CartoonCaricatureMastery = () => {
                   <h4 className="font-bold text-lg mb-3">Your certification demonstrates:</h4>
                   <ul className="space-y-2">
                     <li className="flex items-start">
-                      <span className="text-yellow-300 mr-2">★</span>
-                      <span>Expertise in character design and exaggeration techniques</span>
+                      <span className="text-yellow-400 mr-2">★</span>
+                      <span>Knowledge in content strategy, creation, and distribution</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="text-yellow-300 mr-2">★</span>
-                      <span>Proficiency in creating cartoon and caricature artworks</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-yellow-300 mr-2">★</span>
-                      <span>Skills in both traditional and digital methods</span>
+                      <span className="text-yellow-400 mr-2">★</span>
+                      <span>Skills in driving content-driven business results</span>
                     </li>
                   </ul>
                 </div>
@@ -384,16 +395,12 @@ const CartoonCaricatureMastery = () => {
                   <h4 className="font-bold text-lg mb-3">Bonus Perks:</h4>
                   <ul className="space-y-2">
                     <li className="flex items-start">
-                      <span className="text-yellow-300 mr-2">★</span>
+                      <span className="text-yellow-400 mr-2">★</span>
                       <span>Golden Membership Card for 50% discount on future courses</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="text-yellow-300 mr-2">★</span>
-                      <span>Access to exclusive templates and brushes</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-yellow-300 mr-2">★</span>
-                      <span>Portfolio review by industry experts</span>
+                      <span className="text-yellow-400 mr-2">★</span>
+                      <span>Access to ready-made templates and guides</span>
                     </li>
                   </ul>
                 </div>
@@ -404,9 +411,9 @@ const CartoonCaricatureMastery = () => {
 
         {/* CTA */}
         <section className="text-center py-12 px-4 bg-gradient-to-r from-emerald-600 to-blue-600 rounded-2xl shadow-xl">
-          <h2 className="text-3xl font-bold text-white mb-4">Start Your Artistic Journey Today</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Start Your Content Marketing Journey Today</h2>
           <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
-            Unleash your creativity with our intensive 10-day program
+            Master the art of compelling content with our intensive 1-month program
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
@@ -415,9 +422,7 @@ const CartoonCaricatureMastery = () => {
             >
               Enroll Now 
             </button>
-            <button className="bg-transparent border-2 border-white text-white font-bold px-8 py-4 rounded-full text-lg hover:bg-white/10 transition-all">
-              Download Syllabus
-            </button>
+            
           </div>
         </section>
       </main>
@@ -449,6 +454,7 @@ const CartoonCaricatureMastery = () => {
                     id="name"
                     name="name"
                     value={formData.name}
+                    onKeyDown={allowOnlyLetters}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 rounded-lg border ${
                       errors.name ? 'border-red-500' : 'border-gray-300'
@@ -469,6 +475,7 @@ const CartoonCaricatureMastery = () => {
                     id="phone"
                     name="phone"
                     value={formData.phone}
+                    onKeyDown={allowOnlyNumbers}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 rounded-lg border ${
                       errors.phone ? 'border-red-500' : 'border-gray-300'
@@ -502,7 +509,7 @@ const CartoonCaricatureMastery = () => {
                  <div className="flex justify-end">
                         <button
                             type="submit"
-                            className="bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold px-6 py-3 rounded-lg hover:from-purple-600 hover:to-purple-700 transition-all shadow-md"
+                            className="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-bold px-6 py-3 rounded-lg hover:from-emerald-600 hover:to-emerald-700 transition-all shadow-md"
                             disabled={isSubmitting}
                         >
                             {isSubmitting ? (
@@ -524,10 +531,12 @@ const CartoonCaricatureMastery = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center">
             <div className="flex justify-center mb-4">
+              <div className="flex justify-center mb-4">
               <img src="logo.png" alt="Logo" className=" md:mb-0 md:mr-10 w-20 transform scale-[1.5]" />
             </div>
+            </div>
             <p className="text-lg">© 2025 settlo academy all rights reserved.</p>
-            <p className="mt-2 text-emerald-200">Designed for creative expression</p>
+            <p className="mt-2 text-emerald-200">Designed with passion for creative education</p>
           </div>
         </div>
       </footer>
@@ -535,4 +544,4 @@ const CartoonCaricatureMastery = () => {
   );
 };
 
-export default CartoonCaricatureMastery;
+export default ContentMarketingMastery;

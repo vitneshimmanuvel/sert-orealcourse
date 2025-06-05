@@ -416,9 +416,7 @@ const handleSubmit = async (e) => {
             >
               Enroll Now 
             </button>
-            <button className="bg-transparent border-2 border-white text-white font-bold px-8 py-4 rounded-full text-lg hover:bg-white/10 transition-all">
-              Download Syllabus
-            </button>
+          
           </div>
         </section>
       </main>
