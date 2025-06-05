@@ -153,9 +153,7 @@ const CartoonCaricatureMastery = () => {
       <header className="bg-gradient-to-r from-emerald-600 to-blue-600 text-white py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center mb-8">
-            <div className="bg-gradient-to-br from-emerald-600 to-blue-600 rounded-full w-20 h-20 flex items-center justify-center mb-6 md:mb-0 md:mr-10">
-              <span className="text-3xl font-bold">C</span>
-            </div>
+           <img src="logo.png" alt="Logo" className=" md:mb-0 md:mr-10 w-20 transform scale-[1.5]" />
             <div>
               <h1 className="text-4xl md:text-5xl font-bold mb-2">Cartoon and Caricatures Art Mastery</h1>
               <p className="text-xl max-w-3xl">
@@ -526,9 +524,7 @@ const CartoonCaricatureMastery = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center">
             <div className="flex justify-center mb-4">
-              <div className="bg-gradient-to-br from-emerald-600 to-blue-600 rounded-full w-16 h-16 flex items-center justify-center">
-                <span className="text-2xl font-bold">C</span>
-              </div>
+              <img src="logo.png" alt="Logo" className=" md:mb-0 md:mr-10 w-20 transform scale-[1.5]" />
             </div>
             <p className="text-lg">© 2025 settlo academy all rights reserved.</p>
             <p className="mt-2 text-emerald-200">Designed for creative expression</p>
