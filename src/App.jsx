@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import {BrowserRouter, Routes, Route } from 'react-router-dom';
 import GraphicDesignMastery from './components/GraphicDesignMastery.jsx';
 import ArtificialIntelligenceMastery from './components/ArtificialIntelligenceMastery.jsx';
 import BackendDevelopment from './components/BackendDevelopment.jsx';
@@ -11,7 +11,8 @@ import FrontEndDevelopment from './components/FrontEndDevelopment.jsx';
 
 function App() {
   return (
-    <Routes>
+    <BrowserRouter>
+     <Routes>
       <Route path="/graphic-design" element={<GraphicDesignMastery />} />
       <Route path="/ai-mastery" element={<ArtificialIntelligenceMastery />} />
       <Route path="/backend-dev" element={<BackendDevelopment />} />
@@ -21,6 +22,8 @@ function App() {
       <Route path='/digital-marketing' element={<DigitalMarketingMastery />} />
       <Route path='/front-dev' element={<FrontEndDevelopment />} />
     </Routes>
+    </BrowserRouter>
+   
   );
 }
 
