@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import GraphicDesignMastery from './components/GraphicDesignMastery.jsx';
 import ArtificialIntelligenceMastery from './components/ArtificialIntelligenceMastery.jsx';
 import BackendDevelopment from './components/BackendDevelopment.jsx';
@@ -9,21 +9,25 @@ import ContentMarketingMastery from './components/ContentMarketingMastery.jsx';
 import DigitalMarketingMastery from './components/DigitalMarketingMastery.jsx';
 import FrontEndDevelopment from './components/FrontEndDevelopment.jsx';
 
+import UiUxMastery from './components/UiUxMastery.jsx';
+import TextileDesigningMastery from './components/TextileDesigningMastery.jsx';
+
 function App() {
   return (
     <BrowserRouter>
-     <Routes>
-      <Route path="/graphic-design" element={<GraphicDesignMastery />} />
-      <Route path="/ai-mastery" element={<ArtificialIntelligenceMastery />} />
-      <Route path="/backend-dev" element={<BackendDevelopment />} />
-      <Route path="/brand-dev" element={<BrandDevelopmentForEntrepreneurs />} />
-      <Route path="/cartoon-mastery" element={<CartoonCaricatureMastery />} />
-      <Route path="/content-marketing" element={<ContentMarketingMastery />} />
-      <Route path='/digital-marketing' element={<DigitalMarketingMastery />} />
-      <Route path='/front-dev' element={<FrontEndDevelopment />} />
-    </Routes>
+      <Routes>
+        <Route path="/graphic-design" element={<GraphicDesignMastery />} />
+        <Route path="/ai-mastery" element={<ArtificialIntelligenceMastery />} />
+        <Route path="/backend-dev" element={<BackendDevelopment />} />
+        <Route path="/brand-dev" element={<BrandDevelopmentForEntrepreneurs />} />
+        <Route path="/cartoon-mastery" element={<CartoonCaricatureMastery />} />
+        <Route path="/content-marketing" element={<ContentMarketingMastery />} />
+        <Route path="/digital-marketing" element={<DigitalMarketingMastery />} />
+        <Route path="/front-dev" element={<FrontEndDevelopment />} />
+        <Route path="/textile-design" element={<TextileDesigningMastery />} />
+        <Route path="/ui-ux-design" element={<UiUxMastery />} />
+      </Routes>
     </BrowserRouter>
-   
   );
 }
 
