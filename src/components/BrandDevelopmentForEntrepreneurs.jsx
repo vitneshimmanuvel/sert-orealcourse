@@ -167,9 +167,7 @@ const BrandDevelopmentForEntrepreneurs = () => {
       <header className=" to-blue-600 text-black py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center mb-8">
-            <div className="bg-gradient-to-br from-emerald-600 to-blue-600 rounded-full w-20 h-20 flex items-center justify-center mb-6 md:mb-0 md:mr-10">
-              <span className="text-3xl font-bold">BD</span>
-            </div>
+             <img src="settlo logogogogog-01-01.png" alt="Logo" className="mb-5 md:mb-0 md:mr-10 w-20 transform scale-[1.5]"  />
             <div>
               <h1 className="text-4xl md:text-5xl font-bold mb-2">Brand Development for Entrepreneurs</h1>
               <p className="text-xl max-w-3xl">

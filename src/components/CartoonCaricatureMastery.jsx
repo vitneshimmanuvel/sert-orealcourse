@@ -153,7 +153,7 @@ const CartoonCaricatureMastery = () => {
             <header className="text-black py-16 px-4">
                 <div className="max-w-6xl mx-auto">
                     <div className="flex flex-col md:flex-row items-center mb-8">
-                        <img src="logo.png" alt="Logo" className="md:mb-0 md:mr-10 w-20 transform scale-[1.5]" />
+                       <img src="settlo logogogogog-01-01.png" alt="Logo" className="mb-5 md:mb-0 md:mr-10 w-20 transform scale-[1.5]"  />
                         <div>
                             <h1 className="text-4xl md:text-5xl font-bold mb-2">Cartoon and Caricatures Art Mastery</h1>
                             <p className="text-xl max-w-3xl">
@@ -520,14 +520,14 @@ const CartoonCaricatureMastery = () => {
                 </div>
             )}
 
-            <footer className="bg-gradient-to-r from-emerald-600 to-blue-600 text-white py-12 px-4">
+            <footer className="bg-gray-400 text-black py-12 px-4">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center">
                         <div className="flex justify-center mb-4">
                             <img src="logo.png" alt="Logo" className="md:mb-0 md:mr-10 w-20 transform scale-[1.5]" />
                         </div>
                         <p className="text-lg">© 2025 settlo academy all rights reserved.</p>
-                        <p className="mt-2 text-emerald-200">Designed for creative expression</p>
+                        <p className="mt-2 text-emerald-600">Designed for creative expression</p>
                     </div>
                 </div>
             </footer>

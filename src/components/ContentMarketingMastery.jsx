@@ -168,7 +168,7 @@ const ContentMarketingMastery = () => {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center mb-8">
             <div className="flex justify-center mb-4">
-              <img src="logo.png" alt="Logo" className=" md:mb-0 md:mr-10 w-20 transform scale-[1.5]" />
+              <img src="settlo logogogogog-01-01.png" alt="Logo" className="mb-5 md:mb-0 md:mr-10 w-20 transform scale-[1.5]"  />
             </div>
             <div>
               <h1 className="text-4xl md:text-5xl font-bold mb-2">Content Marketing Mastery</h1>
@@ -211,7 +211,7 @@ const ContentMarketingMastery = () => {
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto px-4 py-12">
+      <main className="max-w-6xl mx-auto px-4 py-1">
         {/* Introduction */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-6 text-gray-900 border-l-4 border-emerald-500 pl-4">Course Introduction</h2>
@@ -527,7 +527,7 @@ const ContentMarketingMastery = () => {
         </div>
       )}
 
-      <footer className="bg-gradient-to-r from-emerald-600 to-blue-600 text-white py-12 px-4">
+      <footer className="bg-gray-400 text-black py-12 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center">
             <div className="flex justify-center mb-4">
@@ -536,7 +536,7 @@ const ContentMarketingMastery = () => {
             </div>
             </div>
             <p className="text-lg">© 2025 settlo academy all rights reserved.</p>
-            <p className="mt-2 text-emerald-200">Designed with passion for creative education</p>
+            <p className="mt-2 text-emerald-600">Designed with passion for creative education</p>
           </div>
         </div>
       </footer>
