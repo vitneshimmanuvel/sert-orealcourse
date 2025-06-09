@@ -188,7 +188,7 @@ const UiUxMastery = () => {
               <h3 className="font-bold text-lg mb-2">Fees</h3>
               <div className="flex items-baseline mb-4">
                 <span className="text-3xl font-bold mr-2">₹30,000 /-</span>
-                <span className="text-xl font-normal">or CAD 1200</span>
+               
               </div>
             </div>
           </div>
