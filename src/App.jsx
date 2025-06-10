@@ -21,6 +21,7 @@ import JuniorAppPro from './components/JuniorAppPro.jsx';
 import JuniorAIPro from './components/JuniorAIPro.jsx';
 import JuniorToonPro from './components/JuniorToonPro.jsx';
 import JuniorWebPro from './components/JuniorWebPro.jsx';
+import BrandProCourse from './components/BrandProCourse.jsx';
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
         <Route path="/juniorapp"  element={<JuniorAppPro/>}/>
         <Route path="/juniorai"  element={<JuniorAIPro/>}/>
         <Route path="/juniortoonpro" element={<JuniorToonPro/>}/>
+        <Route path="/brandbro" element={<BrandProCourse/>}/>
       </Routes>
     </BrowserRouter>
   );
