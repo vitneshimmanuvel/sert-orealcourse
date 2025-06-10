@@ -206,7 +206,8 @@ const FrontEndDevelopment = () => {
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto px-4 py-1">
+      <main className="max-w-6xl mx-auto px-4 py-1
+      ">
         {/* Introduction */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-6 text-gray-900 border-l-4 border-emerald-500 pl-4">Course Introduction</h2>

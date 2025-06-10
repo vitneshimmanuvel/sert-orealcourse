@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const JuniorProCourse = () => {
+const JuniorWebPro = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
@@ -51,7 +51,7 @@ const JuniorProCourse = () => {
             name: formData.name,
             phone: formData.phone,
             email: formData.email,
-            courseName: 'Junior Pro Course',
+            courseName: 'Junior WebPro – Website Design for Kids',
           }),
         });
 
@@ -99,49 +99,40 @@ const JuniorProCourse = () => {
 
   const modules = [
     {
-      title: "Graphic Design for Kids",
-      objective: "Introduce kids to basic graphic design concepts using kid-friendly tools.",
+      title: "Understanding Websites",
+      objective: "Learn what websites are and how they work.",
       topics: [
-        "Introduction to Graphic Design",
-        "Using Canva: Learning basic graphic design tools",
-        "Creating Posters and Flyers: Step-by-step design activity",
-        "Designing with Templates: How to use pre-made designs",
-        "Design Challenges: Simple projects for visual creation"
+        "What is a Website?",
+        "Exploring Kids-Friendly Sites",
       ],
-      outcome: "Kids will create personalized greeting cards and posters using design templates."
+      outcome: "Kids will understand the basic concept and structure of websites."
     },
     {
-      title: "Mobile Application Development",
-      objective: "Teach kids to design simple mobile apps using no-code tools.",
+      title: "Building with Weebly",
+      objective: "Create a website using Weebly's intuitive interface.",
       topics: [
-        "Introduction to Mobile Apps",
-        "Using Weebly: Build simple mobile-friendly websites",
-        "Drag & Drop App Builders: Learning to design apps without coding",
-        "Creating Simple Mobile Apps: Step-by-step walkthrough"
+        "Choosing Templates",
+        "Adding Pages, Text, and Images",
       ],
-      outcome: "Students will design and develop a simple mobile app for kids, learning basic app navigation and UI design."
+      outcome: "Kids will create a basic website structure with pages and content."
     },
     {
-      title: "Artificial Intelligence for Kids",
-      objective: "Introduce basic AI concepts through interactive, kid-friendly projects.",
+      title: "Creative Web Design",
+      objective: "Customize and enhance your website with multimedia elements.",
       topics: [
-        "Introduction to AI",
-        "Using Flutter Flow: Basics of drag-and-drop AI tools",
-        "Coding Basics for Kids: Simple coding using child-friendly platforms",
-        "Creating Simple AI Games: Using basic logic and AI interactions"
+        "Customizing Themes",
+        "Embedding Videos, Audio, and Galleries",
       ],
-      outcome: "Students will build basic AI-driven games with pre-built templates that react to user input."
+      outcome: "Kids will add creative elements to make their website unique."
     },
     {
-      title: "Website Design",
-      objective: "Teach kids to create personal websites using simple tools.",
+      title: "Publish Your Website",
+      objective: "Launch your website and share it with the world.",
       topics: [
-        "Introduction to Websites",
-        "Learning with Simple Tools: Using Weebly and WordPress to build sites",
-        "Creating Personal Websites: Using themes and templates for kids’ creativity",
-        "Adding Content and Multimedia: Incorporating images, text, and videos"
+        "Add Finishing Touches",
+        "Showcase Your Project to the World",
       ],
-      outcome: "Kids will design and publish a personal website showcasing their favorite hobbies and interests."
+      outcome: "Kids will publish their website and share it with friends and family."
     }
   ];
 
@@ -152,9 +143,9 @@ const JuniorProCourse = () => {
           <div className="flex flex-col md:flex-row items-center mb-8">
               <img src="settlo logogogogog-01-01.png" alt="Logo" className="mb-5 md:mb-0 md:mr-10 w-20 transform scale-[1.5]"  />
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-2">Junior Pro Course</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-2">Junior WebPro – Website Design for Kids</h1>
               <p className="text-xl max-w-3xl">
-                Introducing kids to technology through fun, creative projects in Graphic Design, App Development, AI, and Website Design
+                Learn to build and publish your own websites without coding!
               </p>
             </div>
           </div>
@@ -165,16 +156,13 @@ const JuniorProCourse = () => {
               <p className="text-3xl font-bold mb-2">1 Month</p>
               <ul className="space-y-1">
                 <li className="flex items-center">
-                  <span className="mr-2">•</span> Weekly live sessions
+                  <span className="mr-2">•</span> Weekly project-based sessions
                 </li>
                 <li className="flex items-center">
-                  <span className="mr-2">•</span> Guided projects
+                  <span className="mr-2">•</span> Guided website creation
                 </li>
                 <li className="flex items-center">
-                  <span className="mr-2">•</span> Creative assignments
-                </li>
-                <li className="flex items-center">
-                  <span className="mr-2">•</span> Final showcase project
+                  <span className="mr-2">•</span> Final website showcase
                 </li>
               </ul>
             </div>
@@ -183,7 +171,7 @@ const JuniorProCourse = () => {
               <h3 className="font-bold text-lg mb-2">Fees</h3>
               <div className="flex items-baseline mb-4">
                 <span className="text-3xl font-bold mr-2">₹999 /-</span>
-              
+               
               </div>
             </div>
           </div>
@@ -196,26 +184,21 @@ const JuniorProCourse = () => {
           <h2 className="text-3xl font-bold mb-6 text-gray-900 border-l-4 border-emerald-500 pl-4">Course Introduction</h2>
           <div className="bg-white rounded-xl shadow-lg p-6">
             <p className="text-lg mb-4">
-              This Junior Pro Course is designed to introduce kids above 10 years to foundational concepts in Graphic Design, Mobile Application Development, Artificial Intelligence, and Website Design. Through engaging, hands-on activities and guided projects, young learners will build creative, problem-solving, and digital design skills while enhancing their logical thinking.
+              Junior WebPro teaches kids how to build and publish their own websites using tools like Weebly and WordPress. It’s perfect for young creators who want to build a personal blog, project portfolio, or a fan site for their favorite hobby — all without coding!
             </p>
             <p className="text-lg">
-              Using simple, kid-friendly tools, children will explore the world of technology creatively and develop initial skills in visual communication and basic tech literacy.
+              This course provides a fun and engaging introduction to website design, empowering children to express their creativity digitally and develop fundamental web literacy skills.
             </p>
           </div>
         </section>
 
-        {/* Prerequisites */}
+        {/* Age Group */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6 text-gray-900 border-l-4 border-emerald-500 pl-4">Pre-Requisites</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-gradient-to-br from-blue-50 to-emerald-50 rounded-xl p-6 border border-gray-200">
-              <h3 className="text-xl font-semibold mb-3 text-blue-700">Age</h3>
-              <p className="text-lg">Above 10 years</p>
-            </div>
-            <div className="bg-gradient-to-br from-blue-50 to-emerald-50 rounded-xl p-6 border border-gray-200">
-              <h3 className="text-xl font-semibold mb-3 text-emerald-700">Other Requirements</h3>
-              <p className="text-lg">No prior technical knowledge required</p>
-            </div>
+          <h2 className="text-3xl font-bold mb-6 text-gray-900 border-l-4 border-emerald-500 pl-4">Age Group</h2>
+          <div className="bg-gradient-to-br from-blue-50 to-emerald-50 rounded-xl p-6 border border-gray-200">
+            <h3 className="text-xl font-semibold mb-3 text-blue-700">Target Audience</h3>
+            <p className="text-lg">10+ Years</p>
+            <p className="text-lg mt-2">Interest in blogging or content creation</p>
           </div>
         </section>
 
@@ -280,19 +263,15 @@ const JuniorProCourse = () => {
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <span className="text-emerald-500 mr-2">✓</span>
-                  <span>Basic understanding of Graphic Design</span>
+                  <span>Understand how websites work</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-emerald-500 mr-2">✓</span>
-                  <span>Ability to create simple mobile apps using no-code tools</span>
+                  <span>Learn to create and manage personal sites</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-emerald-500 mr-2">✓</span>
-                  <span>Familiarity with Artificial Intelligence through interactive projects</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-emerald-500 mr-2">✓</span>
-                  <span>Basics of website design and publishing</span>
+                  <span>Practice visual organization and content creation</span>
                 </li>
               </ul>
             </div>
@@ -302,15 +281,15 @@ const JuniorProCourse = () => {
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-2">•</span>
-                  <span>Kids gain confidence in using digital tools for creative projects</span>
+                  <span>Kids will publish a live personal website</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-2">•</span>
-                  <span>Showcase creations—designs, apps, and websites—to peers and family</span>
+                  <span>Showcase their interests, hobbies, or stories</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-2">•</span>
-                  <span>Develop initial skills in visual communication and basic tech literacy</span>
+                  <span>Learn early skills in digital literacy and creativity</span>
                 </li>
               </ul>
             </div>
@@ -323,26 +302,26 @@ const JuniorProCourse = () => {
           
           <div className="bg-gradient-to-r from-blue-900 to-emerald-800 text-white rounded-xl p-8 shadow-xl">
             <div className="max-w-4xl mx-auto">
-              <h3 className="text-2xl font-bold mb-4">Globally Recognized Certification</h3>
+              <h3 className="text-2xl font-bold mb-4">Junior Web Creator Certificate</h3>
               <p className="text-xl mb-6">
-                Upon completing this Junior Pro Course, kids will receive a certificate of participation that recognizes their new digital and creative skills.
+                Upon completion, kids will receive a Junior Web Creator Certificate of Completion.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-                  <h4 className="font-bold text-lg mb-3">Your certificate demonstrates:</h4>
+                  <h4 className="font-bold text-lg mb-3">What You'll Get:</h4>
                   <ul className="space-y-2">
                     <li className="flex items-start">
                       <span className="text-yellow-400 mr-2">★</span>
-                      <span>Foundational understanding of digital design concepts</span>
+                      <span>Junior Web Creator Certificate</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-yellow-400 mr-2">★</span>
-                      <span>Ability to use creative tools for digital projects</span>
+                      <span>Published personal website</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-yellow-400 mr-2">★</span>
-                      <span>Initial skills in technology and logical thinking</span>
+                      <span>Website Hosting for 1 Month (Free Plan)</span>
                     </li>
                   </ul>
                 </div>
@@ -352,15 +331,15 @@ const JuniorProCourse = () => {
                   <ul className="space-y-2">
                     <li className="flex items-start">
                       <span className="text-yellow-400 mr-2">★</span>
-                      <span>Golden Membership Card: 50% discount on future courses</span>
+                      <span>Golden Membership for future courses</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-yellow-400 mr-2">★</span>
-                      <span>Portfolio showcase for family and friends</span>
+                      <span>Early access to new web design courses</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-yellow-400 mr-2">★</span>
-                      <span>Certificate of participation for school portfolios</span>
+                      <span>Portfolio review by instructors</span>
                     </li>
                   </ul>
                 </div>
@@ -371,9 +350,9 @@ const JuniorProCourse = () => {
 
         {/* CTA */}
         <section className="text-center py-12 px-4 bg-gradient-to-r from-blue-600 to-emerald-600 rounded-2xl shadow-xl">
-          <h2 className="text-3xl font-bold text-white mb-4">Start Your Child's Tech Journey Today</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Start Your Child's Web Design Journey Today</h2>
           <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
-            Enroll your child in our Junior Pro Course and watch them develop creativity and tech skills!
+            Enroll your child in Junior WebPro and watch them create their very own website!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
@@ -501,4 +480,4 @@ const JuniorProCourse = () => {
   );
 };
 
-export default JuniorProCourse;
+export default JuniorWebPro;

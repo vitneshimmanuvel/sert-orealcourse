@@ -20,6 +20,7 @@ import JuniorDesignPro from './components/JuniorDesignPro.jsx';
 import JuniorAppPro from './components/JuniorAppPro.jsx';
 import JuniorAIPro from './components/JuniorAIPro.jsx';
 import JuniorToonPro from './components/JuniorToonPro.jsx';
+import JuniorWebPro from './components/JuniorWebPro.jsx';
 
 function App() {
   return (
@@ -41,7 +42,7 @@ function App() {
         <Route path="/video-editing" element={<VideoEditingMastery />} />
         <Route path ="/web-design" element={<WebsiteDesignMastery />} />
         <Route path="/mobile-app-dev" element={<MobileAppMastery />} />
-        <Route path="/junior-pro" element={<JuniorProCourse />} />
+        <Route path="/juniorwebdesign" element={<JuniorWebPro/>} />
         <Route path="/juniordesign" element={<JuniorDesignPro/>} />
         <Route path="/juniorapp"  element={<JuniorAppPro/>}/>
         <Route path="/juniorai"  element={<JuniorAIPro/>}/>
