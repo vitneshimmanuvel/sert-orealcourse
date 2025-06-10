@@ -11,6 +11,15 @@ import FrontEndDevelopment from './components/FrontEndDevelopment.jsx';
 
 import UiUxMastery from './components/UiUxMastery.jsx';
 import TextileDesigningMastery from './components/TextileDesigningMastery.jsx';
+import SeoSemMastery from './components/SeoSemMastery.jsx';
+import VideoEditingMastery from './components/VideoEditingMastery.jsx';
+import WebsiteDesignMastery from './components/WebsiteDesignMastery.jsx';
+import MobileAppMastery from './components/MobileAppMastery.jsx';
+import JuniorProCourse from './components/JuniorProCourse.jsx';
+import JuniorDesignPro from './components/JuniorDesignPro.jsx';
+import JuniorAppPro from './components/JuniorAppPro.jsx';
+import JuniorAIPro from './components/JuniorAIPro.jsx';
+import JuniorToonPro from './components/JuniorToonPro.jsx';
 
 function App() {
   return (
@@ -26,6 +35,17 @@ function App() {
         <Route path="/front-dev" element={<FrontEndDevelopment />} />
         <Route path="/textile-design" element={<TextileDesigningMastery />} />
         <Route path="/ui-ux-design" element={<UiUxMastery />} />
+
+         {/* cad money change */}
+        <Route path="/seo-mastery" element={<SeoSemMastery />} />
+        <Route path="/video-editing" element={<VideoEditingMastery />} />
+        <Route path ="/web-design" element={<WebsiteDesignMastery />} />
+        <Route path="/mobile-app-dev" element={<MobileAppMastery />} />
+        <Route path="/junior-pro" element={<JuniorProCourse />} />
+        <Route path="/juniordesign" element={<JuniorDesignPro/>} />
+        <Route path="/juniorapp"  element={<JuniorAppPro/>}/>
+        <Route path="/juniorai"  element={<JuniorAIPro/>}/>
+        <Route path="/juniortoonpro" element={<JuniorToonPro/>}/>
       </Routes>
     </BrowserRouter>
   );
