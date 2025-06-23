@@ -196,7 +196,7 @@ const FrontEndDevelopment = () => {
               <h3 className="font-bold text-lg mb-2">Fees</h3>
               <div className="flex flex-col">
                 <div className="flex items-baseline mb-2">
-                  <span className="text-2xl font-bold mr-2">₹10,000 /-</span>
+                  <span className="text-2xl font-bold mr-2">₹20,000 /-</span>
                   <span className="text-gray-200">INR</span>
                 </div>
                
