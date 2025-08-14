@@ -9,7 +9,7 @@ export default defineConfig({
     outDir: 'dist',
   },
   server: {
-    port: 3000,
+    port: 5173,
     // 👇 This fixes refresh issues in dev mode (optional)
     historyApiFallback: true
   },

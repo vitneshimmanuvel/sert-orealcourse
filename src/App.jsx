@@ -23,6 +23,15 @@ import JuniorToonPro from './components/JuniorToonPro.jsx';
 import JuniorWebPro from './components/JuniorWebPro.jsx';
 import BrandProCourse from './components/BrandProCourse.jsx';
 
+
+
+
+
+import DigitalMarketing from './pages/services/DigitalMarketing.jsx';
+import WebDevelopment from './pages/services/WebDevelopment.jsx';
+import GraphicDesign from './pages/services/GraphicDesign.jsx';
+import ProcessAutomation from './pages/services/ProcessAutomation.jsx';
+import TextileDesign from './pages/services/TextileDesign.jsx';
 function App() {
   return (
     <BrowserRouter>
@@ -49,6 +58,23 @@ function App() {
         <Route path="/juniorai"  element={<JuniorAIPro/>}/>
         <Route path="/juniortoonpro" element={<JuniorToonPro/>}/>
         <Route path="/brandbro" element={<BrandProCourse/>}/>
+
+
+
+
+
+
+
+
+
+
+
+
+        <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
+        <Route path="/services/web-development" element={<WebDevelopment />} />
+        <Route path="/services/graphic-design" element={<GraphicDesign />} />
+        <Route path="/services/process-automation" element={<ProcessAutomation />} />
+        <Route path="/services/textile-design" element={<TextileDesign />} />
       </Routes>
     </BrowserRouter>
   );
