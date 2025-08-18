@@ -1,5 +1,6 @@
 // pages/services/WebDevelopment.jsx
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
+import { FaCode, FaMobile, FaRocket, FaLightbulb } from 'react-icons/fa';
 
 const WebDevelopment = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -14,10 +15,11 @@ const WebDevelopment = () => {
   });
   const [errors, setErrors] = useState({});
 
-  const packages = [
+  // Cached packages data using useMemo
+  const packages = useMemo(() => [
     {
       name: "Basic Presence",
-      price: "₹12,000",
+      price: "₹6,999",
       period: "(one-time)",
       features: [
         "3-page static website",
@@ -31,11 +33,12 @@ const WebDevelopment = () => {
       goal: "Perfect for simple online presence",
       popular: false,
       gradient: "from-blue-400 to-indigo-600",
-      deliveryTime: "5-7 days"
+      deliveryTime: "5-7 days",
+      savings: null
     },
     {
       name: "Professional Site",
-      price: "₹30,000",
+      price: "₹11,999",
       period: "(one-time)",
       features: [
         "6–8 dynamic pages + CMS",
@@ -50,11 +53,12 @@ const WebDevelopment = () => {
       goal: "A polished, functional brand hub",
       popular: true,
       gradient: "from-green-400 to-blue-600",
-      deliveryTime: "10-14 days"
+      deliveryTime: "10-14 days",
+      savings: "Best Value"
     },
     {
       name: "E-Commerce Pro",
-      price: "₹65,000",
+      price: "₹19,999",
       period: "(one-time)",
       features: [
         "Full e-commerce store",
@@ -70,9 +74,10 @@ const WebDevelopment = () => {
       goal: "Sell products/services online effortlessly",
       popular: false,
       gradient: "from-purple-400 to-pink-600",
-      deliveryTime: "15-21 days"
+      deliveryTime: "15-21 days",
+      savings: "Premium Plan"
     }
-  ];
+  ], []);
 
   const validateForm = () => {
     const newErrors = {};
@@ -190,7 +195,10 @@ const WebDevelopment = () => {
       <main className="max-w-7xl mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Choose Your Website Package</h2>
-          <p className="text-xl text-gray-600">From simple presence to powerful e-commerce solutions</p>
+          <p className="text-xl text-gray-600 mb-4">From simple presence to powerful e-commerce solutions</p>
+          <div className="bg-gradient-to-r from-orange-400 to-red-500 text-white px-6 py-3 rounded-full inline-block font-semibold text-lg shadow-lg">
+            🚀 Customizable Pricing Available - Starting from ₹2,999/-
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -203,7 +211,13 @@ const WebDevelopment = () => {
             >
               {pkg.popular && (
                 <div className="absolute top-0 right-0 bg-green-500 text-white px-6 py-2 rounded-bl-2xl font-bold">
-                  Best Value
+                  Most Popular
+                </div>
+              )}
+
+              {pkg.savings && (
+                <div className="absolute top-0 left-0 bg-red-500 text-white px-4 py-2 rounded-br-2xl text-sm font-bold">
+                  {pkg.savings}
                 </div>
               )}
 
@@ -240,6 +254,24 @@ const WebDevelopment = () => {
           ))}
         </div>
 
+        {/* Custom Pricing Notice */}
+        <div className="mt-12 bg-gradient-to-r from-blue-50 to-green-50 rounded-2xl p-8 text-center border border-blue-200">
+          <div className="flex justify-center mb-4">
+            <FaLightbulb className="text-4xl text-yellow-500" />
+          </div>
+          <h3 className="text-2xl font-bold text-gray-800 mb-4">Need a Custom Website Solution?</h3>
+          <p className="text-lg text-gray-600 mb-4">
+            Our packages are fully customizable to meet your specific business needs. 
+            We offer flexible pricing starting from just ₹2,999/- based on your requirements.
+          </p>
+          <button 
+            onClick={() => openModal('Custom Website Package')}
+            className="bg-gradient-to-r from-blue-600 to-green-600 text-white font-bold py-3 px-8 rounded-xl hover:shadow-lg transition-all duration-300"
+          >
+            Get Custom Quote
+          </button>
+        </div>
+
         {/* Technology Stack */}
         <div className="mt-20">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Our Technology Stack</h2>
@@ -273,29 +305,61 @@ const WebDevelopment = () => {
 
         {/* Features Section */}
         <div className="mt-20">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Why Choose Our Web Development?</h2>
+          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl shadow-lg p-8 text-center">
-              <div className="text-5xl mb-4">📱</div>
+              <div className="flex justify-center mb-4">
+                <FaMobile className="text-5xl text-blue-600" />
+              </div>
               <h3 className="text-xl font-bold mb-4 text-gray-800">Mobile Responsive</h3>
               <p className="text-gray-600">Perfect display on all devices and screen sizes</p>
             </div>
             
             <div className="bg-white rounded-xl shadow-lg p-8 text-center">
-              <div className="text-5xl mb-4">⚡</div>
+              <div className="flex justify-center mb-4">
+                <FaRocket className="text-5xl text-green-600" />
+              </div>
               <h3 className="text-xl font-bold mb-4 text-gray-800">Lightning Fast</h3>
               <p className="text-gray-600">Optimized for speed and performance</p>
             </div>
             
             <div className="bg-white rounded-xl shadow-lg p-8 text-center">
-              <div className="text-5xl mb-4">🔒</div>
+              <div className="flex justify-center mb-4">
+                <FaCode className="text-5xl text-purple-600" />
+              </div>
               <h3 className="text-xl font-bold mb-4 text-gray-800">Secure & Safe</h3>
               <p className="text-gray-600">SSL certificates and security best practices</p>
             </div>
           </div>
         </div>
+
+        {/* Stats Section */}
+        <div className="mt-20 bg-gradient-to-r from-blue-600 to-green-600 rounded-2xl p-12 text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Our Development Numbers</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-4xl font-bold mb-2">200+</div>
+              <div className="text-lg opacity-90">Websites Built</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">99.9%</div>
+              <div className="text-lg opacity-90">Uptime Guaranteed</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">100%</div>
+              <div className="text-lg opacity-90">Client Satisfaction</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">24/7</div>
+              <div className="text-lg opacity-90">Support Available</div>
+            </div>
+          </div>
+        </div>
       </main>
 
-      {/* Modal - Same as Digital Marketing */}
+      {/* Modal */}
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-xl shadow-2xl max-w-md w-full">
@@ -396,14 +460,38 @@ const WebDevelopment = () => {
         </div>
       )}
 
-
-      <footer className="bg-gray-900 text-white py-12 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="flex justify-center mb-4">
-            <img src="../logoset.png" alt="Logo" className="w-20 transform scale-150" />
+      {/* Updated Footer with Better Styling */}
+      <footer className="bg-gradient-to-r from-slate-800 via-blue-900 to-slate-800 text-white py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-8">
+            <div className="flex justify-center mb-6">
+              <div className="bg-white rounded-full p-4 shadow-lg">
+                <img src="../logoset.png" alt="Logo" className="w-16 h-16 object-contain" />
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-300 to-green-300 bg-clip-text text-transparent">
+              Settlo Academy
+            </h3>
+            <p className="text-lg text-gray-300 mb-2">© 2025 Settlo Academy. All rights reserved.</p>
+            <p className="text-green-400 font-medium text-xl">Building digital experiences that matter</p>
           </div>
-          <p className="text-lg">© 2025 Settlo Academy. All rights reserved.</p>
-          <p className="mt-2 text-green-400">Building digital experiences that matter</p>
+          
+          <div className="border-t border-gray-700 pt-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div>
+                <h4 className="font-semibold text-blue-300 mb-2">📧 Contact Us</h4>
+                <p className="text-gray-300">info@settlo.com</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-green-300 mb-2">🚀 Let's Build Together</h4>
+                <p className="text-gray-300">Transform your digital presence</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-purple-300 mb-2">💡 Innovation</h4>
+                <p className="text-gray-300">Cutting-edge solutions</p>
+              </div>
+            </div>
+          </div>
         </div>
       </footer>
     </div>

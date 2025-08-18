@@ -1,5 +1,6 @@
 // pages/services/GraphicDesign.jsx
 import React, { useState } from 'react';
+import { FaPalette, FaRocket, FaStar, FaLightbulb } from 'react-icons/fa';
 
 const GraphicDesign = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -17,31 +18,34 @@ const GraphicDesign = () => {
   const packages = [
     {
       name: "Basic Brand Pack",
-      price: "₹5,000",
+      price: "₹2,999",
       period: "(one-time)",
       features: [
         "Custom logo design",
         "Business card design",
         "2 marketing banners",
-        "2 free revisions",
+        "2 free revisions included",
         "High-resolution files",
         "Basic brand guidelines",
-        "Social media logo variants"
+        "Social media logo variants",
+        "Free consultation call"
       ],
       goal: "Perfect starter visual identity for new businesses",
       popular: false,
       gradient: "from-pink-400 to-red-600",
       deliveryTime: "3-5 days",
-      revisions: "2 Free"
+      revisions: "2 Free reels",
+      savings: null
     },
     {
       name: "Creative Suite",
-      price: "₹12,000",
+      price: "₹6,999",
       period: "(one-time)",
       features: [
         "Complete branding kit (logo, letterhead, business cards)",
         "Social media templates (10 designs)",
         "5 marketing banners/posters",
+        "2 free reels design templates",
         "Brand style guide",
         "Unlimited revisions",
         "Print-ready files",
@@ -52,11 +56,12 @@ const GraphicDesign = () => {
       popular: true,
       gradient: "from-purple-500 to-pink-600",
       deliveryTime: "7-10 days",
-      revisions: "Unlimited"
+      revisions: "Unlimited",
+      savings: "Best Value"
     },
     {
       name: "Premium Design Hub",
-      price: "₹25,000",
+      price: "₹11,999",
       period: "(one-time)",
       features: [
         "Complete brand identity package",
@@ -67,13 +72,15 @@ const GraphicDesign = () => {
         "Website graphics package",
         "Social media content calendar designs",
         "Vector illustrations (5 custom)",
-        "3D mockups and presentations"
+        "3D mockups and presentations",
+        "Free reels templates (5 premium designs)"
       ],
       goal: "Professionally branded campaigns with ongoing support",
       popular: false,
       gradient: "from-indigo-500 to-purple-700",
       deliveryTime: "10-15 days",
-      revisions: "Unlimited + 3 months support"
+      revisions: "Unlimited + 3 months support",
+      savings: "Premium Plan"
     }
   ];
 
@@ -180,7 +187,6 @@ const GraphicDesign = () => {
       <header className="bg-gradient-to-r from-pink-600 to-purple-700 text-white py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <div className="flex justify-center items-center mb-6">
-           
             <div>
               <h1 className="text-4xl md:text-6xl font-bold mb-4">Graphic Design Services</h1>
               <p className="text-xl md:text-2xl max-w-3xl mx-auto">
@@ -195,7 +201,10 @@ const GraphicDesign = () => {
       <main className="max-w-7xl mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Design Packages for Every Need</h2>
-          <p className="text-xl text-gray-600">From logo design to complete brand identity solutions</p>
+          <p className="text-xl text-gray-600 mb-4">From logo design to complete brand identity solutions</p>
+          <div className="bg-gradient-to-r from-orange-400 to-red-500 text-white px-6 py-3 rounded-full inline-block font-semibold text-lg shadow-lg">
+            🎨 Customizable Pricing Available - Starting from ₹500/-
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -209,6 +218,12 @@ const GraphicDesign = () => {
               {pkg.popular && (
                 <div className="absolute top-0 right-0 bg-purple-500 text-white px-6 py-2 rounded-bl-2xl font-bold">
                   Most Popular
+                </div>
+              )}
+
+              {pkg.savings && (
+                <div className="absolute top-0 left-0 bg-red-500 text-white px-4 py-2 rounded-br-2xl text-sm font-bold">
+                  {pkg.savings}
                 </div>
               )}
 
@@ -250,6 +265,24 @@ const GraphicDesign = () => {
           ))}
         </div>
 
+        {/* Custom Pricing Notice */}
+        <div className="mt-12 bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-8 text-center border border-pink-200">
+          <div className="flex justify-center mb-4">
+            <FaLightbulb className="text-4xl text-yellow-500" />
+          </div>
+          <h3 className="text-2xl font-bold text-gray-800 mb-4">Need a Custom Design Solution?</h3>
+          <p className="text-lg text-gray-600 mb-4">
+            Our design packages are fully customizable to meet your specific brand needs. 
+            We offer flexible pricing starting from just ₹500/- based on your requirements.
+          </p>
+          <button 
+            onClick={() => openModal('Custom Package')}
+            className="bg-gradient-to-r from-pink-600 to-purple-600 text-white font-bold py-3 px-8 rounded-xl hover:shadow-lg transition-all duration-300"
+          >
+            Get Custom Quote
+          </button>
+        </div>
+
         {/* Design Process */}
         <div className="mt-20">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Our Design Process</h2>
@@ -281,25 +314,57 @@ const GraphicDesign = () => {
           </div>
         </div>
 
-        {/* Portfolio Showcase */}
-        <div className="mt-20 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-12 text-white">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Why Choose Our Design Services?</h2>
+        {/* Features Section */}
+        <div className="mt-20">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Why Choose Our Design Services?</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="text-4xl mb-4">🏆</div>
-              <h3 className="text-xl font-bold mb-2">Award-Winning</h3>
-              <p>Recognized designs that stand out</p>
+            <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+              <div className="flex justify-center mb-4">
+                <FaPalette className="text-5xl text-pink-600" />
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-gray-800">Creative Excellence</h3>
+              <p className="text-gray-600">Award-winning designs that capture your brand essence perfectly</p>
             </div>
-            <div className="text-center">
-              <div className="text-4xl mb-4">⚡</div>
-              <h3 className="text-xl font-bold mb-2">Fast Turnaround</h3>
-              <p>Quick delivery without compromising quality</p>
+            
+            <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+              <div className="flex justify-center mb-4">
+                <FaRocket className="text-5xl text-purple-600" />
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-gray-800">Fast Turnaround</h3>
+              <p className="text-gray-600">Quick delivery without compromising on quality or attention to detail</p>
             </div>
-            <div className="text-center">
-              <div className="text-4xl mb-4">💎</div>
-              <h3 className="text-xl font-bold mb-2">Premium Quality</h3>
-              <p>High-resolution, print-ready designs</p>
+            
+            <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+              <div className="flex justify-center mb-4">
+                <FaStar className="text-5xl text-yellow-600" />
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-gray-800">Premium Quality</h3>
+              <p className="text-gray-600">High-resolution, print-ready designs with unlimited revisions</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Stats Section */}
+        <div className="mt-20 bg-gradient-to-r from-pink-600 to-purple-700 rounded-2xl p-12 text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Our Design Success Numbers</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-4xl font-bold mb-2">1000+</div>
+              <div className="text-lg opacity-90">Designs Created</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">300+</div>
+              <div className="text-lg opacity-90">Happy Clients</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">99%</div>
+              <div className="text-lg opacity-90">Client Satisfaction</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">48Hr</div>
+              <div className="text-lg opacity-90">Average Delivery</div>
             </div>
           </div>
         </div>
@@ -406,14 +471,38 @@ const GraphicDesign = () => {
         </div>
       )}
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="flex justify-center mb-4">
-            <img src="../logoset.png" alt="Logo" className="w-20 transform scale-150" />
+      {/* Updated Footer with Better Styling */}
+      <footer className="bg-gradient-to-r from-slate-800 via-purple-900 to-slate-800 text-white py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-8">
+            <div className="flex justify-center mb-6">
+              <div className="bg-white rounded-full p-4 shadow-lg">
+                <img src="../logoset.png" alt="Logo" className="w-16 h-16 object-contain" />
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-pink-300 to-purple-300 bg-clip-text text-transparent">
+              Settlo Academy
+            </h3>
+            <p className="text-lg text-gray-300 mb-2">© 2025 Settlo Academy. All rights reserved.</p>
+            <p className="text-pink-400 font-medium text-xl">Creating visual experiences that inspire</p>
           </div>
-          <p className="text-lg">© 2025 Settlo Academy. All rights reserved.</p>
-          <p className="mt-2 text-purple-400">Creating visual experiences that inspire</p>
+          
+          <div className="border-t border-gray-700 pt-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div>
+                <h4 className="font-semibold text-pink-300 mb-2">🎨 Design Excellence</h4>
+                <p className="text-gray-300">Award-winning creative solutions</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-purple-300 mb-2">🚀 Let's Create Together</h4>
+                <p className="text-gray-300">Transform your brand identity</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-blue-300 mb-2">💡 Innovation</h4>
+                <p className="text-gray-300">Cutting-edge design trends</p>
+              </div>
+            </div>
+          </div>
         </div>
       </footer>
     </div>

@@ -1,5 +1,6 @@
 // pages/services/TextileDesign.jsx
 import React, { useState } from 'react';
+import { FaPalette, FaRocket, FaStar, FaLightbulb } from 'react-icons/fa';
 
 const TextileDesign = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -17,7 +18,7 @@ const TextileDesign = () => {
   const packages = [
     {
       name: "Starter Pack",
-      price: "₹7,000",
+      price: "₹6,999",
       period: "(one-time)",
       features: [
         "3 packaging designs OR 5 textile patterns",
@@ -32,11 +33,12 @@ const TextileDesign = () => {
       popular: false,
       gradient: "from-rose-400 to-orange-600",
       deliveryTime: "5-7 days",
-      fileFormats: "AI, PSD, PDF"
+      fileFormats: "AI, PSD, PDF",
+      savings: null
     },
     {
       name: "Brand Collection",
-      price: "₹18,000",
+      price: "₹17,999",
       period: "(one-time)",
       features: [
         "8 textile patterns OR 6 packaging designs",
@@ -52,11 +54,12 @@ const TextileDesign = () => {
       popular: true,
       gradient: "from-amber-500 to-red-600",
       deliveryTime: "8-12 days",
-      fileFormats: "All formats + Source"
+      fileFormats: "All formats + Source",
+      savings: "Best Value"
     },
     {
       name: "Premium Collection",
-      price: "₹35,000",
+      price: "₹34,999",
       period: "(complete package)",
       features: [
         "Full seasonal collection (15+ designs)",
@@ -73,7 +76,8 @@ const TextileDesign = () => {
       popular: false,
       gradient: "from-purple-500 to-pink-700",
       deliveryTime: "15-20 days",
-      fileFormats: "Complete package + 3D"
+      fileFormats: "Complete package + 3D",
+      savings: "Premium Plan"
     }
   ];
 
@@ -180,7 +184,6 @@ const TextileDesign = () => {
       <header className="bg-gradient-to-r from-rose-600 to-purple-700 text-white py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <div className="flex justify-center items-center mb-6">
-           
             <div>
               <h1 className="text-4xl md:text-6xl font-bold mb-4">Textile & Packaging Design</h1>
               <p className="text-xl md:text-2xl max-w-3xl mx-auto">
@@ -195,7 +198,10 @@ const TextileDesign = () => {
       <main className="max-w-7xl mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Design Collections</h2>
-          <p className="text-xl text-gray-600">From individual patterns to complete seasonal collections</p>
+          <p className="text-xl text-gray-600 mb-4">From individual patterns to complete seasonal collections</p>
+          <div className="bg-gradient-to-r from-orange-400 to-red-500 text-white px-6 py-3 rounded-full inline-block font-semibold text-lg shadow-lg">
+            🎨 Customizable Pricing Available - Starting from ₹4,999/-
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -208,7 +214,13 @@ const TextileDesign = () => {
             >
               {pkg.popular && (
                 <div className="absolute top-0 right-0 bg-amber-500 text-white px-6 py-2 rounded-bl-2xl font-bold">
-                  Best Value
+                  Most Popular
+                </div>
+              )}
+
+              {pkg.savings && !pkg.popular && (
+                <div className="absolute top-0 left-0 bg-red-500 text-white px-4 py-2 rounded-br-2xl text-sm font-bold">
+                  {pkg.savings}
                 </div>
               )}
 
@@ -250,6 +262,24 @@ const TextileDesign = () => {
           ))}
         </div>
 
+        {/* Custom Pricing Notice */}
+        <div className="mt-12 bg-gradient-to-r from-rose-50 to-purple-50 rounded-2xl p-8 text-center border border-rose-200">
+          <div className="flex justify-center mb-4">
+            <FaLightbulb className="text-4xl text-yellow-500" />
+          </div>
+          <h3 className="text-2xl font-bold text-gray-800 mb-4">Need a Custom Design Solution?</h3>
+          <p className="text-lg text-gray-600 mb-4">
+            Our design packages are fully customizable to meet your specific textile and packaging needs. 
+            We offer flexible pricing starting from just ₹4,999/- based on your requirements.
+          </p>
+          <button 
+            onClick={() => openModal('Custom Package')}
+            className="bg-gradient-to-r from-rose-600 to-purple-600 text-white font-bold py-3 px-8 rounded-xl hover:shadow-lg transition-all duration-300"
+          >
+            Get Custom Quote
+          </button>
+        </div>
+
         {/* Design Categories */}
         <div className="mt-20">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">What We Design</h2>
@@ -277,6 +307,37 @@ const TextileDesign = () => {
               <div className="text-4xl mb-4">👜</div>
               <h3 className="font-bold text-gray-800 mb-2">Accessories</h3>
               <p className="text-sm text-gray-600">Bags, scarves, seasonal accessories</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Features Section */}
+        <div className="mt-20">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Why Choose Our Design Services?</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+              <div className="flex justify-center mb-4">
+                <FaPalette className="text-5xl text-rose-600" />
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-gray-800">Creative Excellence</h3>
+              <p className="text-gray-600">Trend-focused designs that capture market attention</p>
+            </div>
+            
+            <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+              <div className="flex justify-center mb-4">
+                <FaRocket className="text-5xl text-amber-600" />
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-gray-800">Fast Turnaround</h3>
+              <p className="text-gray-600">Quick delivery with production-ready specifications</p>
+            </div>
+            
+            <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+              <div className="flex justify-center mb-4">
+                <FaStar className="text-5xl text-purple-600" />
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-gray-800">Market Ready</h3>
+              <p className="text-gray-600">Print-ready files with complete technical specifications</p>
             </div>
           </div>
         </div>
@@ -320,23 +381,24 @@ const TextileDesign = () => {
 
         {/* Industry Focus */}
         <div className="mt-20 bg-gradient-to-r from-rose-600 to-purple-700 rounded-2xl p-12 text-white">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Industries We Serve</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Our Success Numbers</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl mb-4">🏭</div>
-              <h3 className="text-xl font-bold mb-2">Fashion & Apparel</h3>
-              <p>Clothing brands, fashion houses, boutiques</p>
+              <div className="text-4xl font-bold mb-2">800+</div>
+              <div className="text-lg opacity-90">Designs Created</div>
             </div>
             <div>
-              <div className="text-4xl mb-4">🏪</div>
-              <h3 className="text-xl font-bold mb-2">Retail & FMCG</h3>
-              <p>Product packaging, consumer goods</p>
+              <div className="text-4xl font-bold mb-2">200+</div>
+              <div className="text-lg opacity-90">Happy Clients</div>
             </div>
             <div>
-              <div className="text-4xl mb-4">🏡</div>
-              <h3 className="text-xl font-bold mb-2">Home Decor</h3>
-              <p>Interior design, home furnishing brands</p>
+              <div className="text-4xl font-bold mb-2">98%</div>
+              <div className="text-lg opacity-90">Client Satisfaction</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">7 days</div>
+              <div className="text-lg opacity-90">Average Delivery</div>
             </div>
           </div>
 
@@ -453,14 +515,38 @@ const TextileDesign = () => {
         </div>
       )}
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="flex justify-center mb-4">
-            <img src="../logoset.png" alt="Logo" className="w-20 transform scale-150" />
+      {/* Updated Footer with Better Styling */}
+      <footer className="bg-gradient-to-r from-slate-800 via-rose-900 to-slate-800 text-white py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-8">
+            <div className="flex justify-center mb-6">
+              <div className="bg-white rounded-full p-4 shadow-lg">
+                <img src="../logoset.png" alt="Logo" className="w-16 h-16 object-contain" />
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-rose-300 to-purple-300 bg-clip-text text-transparent">
+              Settlo Academy
+            </h3>
+            <p className="text-lg text-gray-300 mb-2">© 2025 Settlo Academy. All rights reserved.</p>
+            <p className="text-rose-400 font-medium text-xl">Weaving creativity into every design</p>
           </div>
-          <p className="text-lg">© 2025 Settlo Academy. All rights reserved.</p>
-          <p className="mt-2 text-rose-400">Weaving creativity into every design</p>
+          
+          <div className="border-t border-gray-700 pt-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div>
+                <h4 className="font-semibold text-rose-300 mb-2">📧 Contact Us</h4>
+                <p className="text-gray-300">info@settlo.com</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-purple-300 mb-2">🎨 Let's Create Together</h4>
+                <p className="text-gray-300">Transform your textile vision</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-amber-300 mb-2">💡 Innovation</h4>
+                <p className="text-gray-300">Cutting-edge design trends</p>
+              </div>
+            </div>
+          </div>
         </div>
       </footer>
     </div>

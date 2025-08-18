@@ -1,5 +1,6 @@
 // pages/services/ProcessAutomation.jsx
 import React, { useState } from 'react';
+import { FaCogs, FaRocket, FaChartLine, FaLightbulb } from 'react-icons/fa';
 
 const ProcessAutomation = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -17,7 +18,7 @@ const ProcessAutomation = () => {
   const packages = [
     {
       name: "Basic Flow",
-      price: "₹10,000",
+      price: "₹9,999",
       period: "(one-time setup)",
       features: [
         "1 automation workflow",
@@ -36,7 +37,7 @@ const ProcessAutomation = () => {
     },
     {
       name: "Workflow Boost",
-      price: "₹25,000",
+      price: "₹19,999",
       period: "(one-time setup)",
       features: [
         "3 automation workflows",
@@ -56,7 +57,7 @@ const ProcessAutomation = () => {
     },
     {
       name: "Full Auto Pilot",
-      price: "₹55,000",
+      price: "₹29,999",
       period: "(complete system)",
       features: [
         "Custom automation system",
@@ -180,7 +181,6 @@ const ProcessAutomation = () => {
       <header className="bg-gradient-to-r from-teal-600 to-violet-700 text-white py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <div className="flex justify-center items-center mb-6">
-         
             <div>
               <h1 className="text-4xl md:text-6xl font-bold mb-4">Process Automation Solutions</h1>
               <p className="text-xl md:text-2xl max-w-3xl mx-auto">
@@ -195,7 +195,10 @@ const ProcessAutomation = () => {
       <main className="max-w-7xl mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Automation Packages</h2>
-          <p className="text-xl text-gray-600">From simple workflows to complete business automation</p>
+          <p className="text-xl text-gray-600 mb-4">From simple workflows to complete business automation</p>
+          <div className="bg-gradient-to-r from-orange-400 to-red-500 text-white px-6 py-3 rounded-full inline-block font-semibold text-lg shadow-lg">
+            ⚙️ Customizable Pricing Available - Starting from ₹4,999/-
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -209,6 +212,12 @@ const ProcessAutomation = () => {
               {pkg.popular && (
                 <div className="absolute top-0 right-0 bg-emerald-500 text-white px-6 py-2 rounded-bl-2xl font-bold">
                   Most Popular
+                </div>
+              )}
+
+              {index === 2 && (
+                <div className="absolute top-0 left-0 bg-red-500 text-white px-4 py-2 rounded-br-2xl text-sm font-bold">
+                  Premium Plan
                 </div>
               )}
 
@@ -250,6 +259,24 @@ const ProcessAutomation = () => {
           ))}
         </div>
 
+        {/* Custom Pricing Notice */}
+        <div className="mt-12 bg-gradient-to-r from-teal-50 to-violet-50 rounded-2xl p-8 text-center border border-teal-200">
+          <div className="flex justify-center mb-4">
+            <FaLightbulb className="text-4xl text-yellow-500" />
+          </div>
+          <h3 className="text-2xl font-bold text-gray-800 mb-4">Need a Custom Automation Solution?</h3>
+          <p className="text-lg text-gray-600 mb-4">
+            Our automation packages are fully customizable to meet your specific business needs. 
+            We offer flexible pricing starting from just ₹4,999/- based on your requirements.
+          </p>
+          <button 
+            onClick={() => openModal('Custom Package')}
+            className="bg-gradient-to-r from-teal-600 to-violet-600 text-white font-bold py-3 px-8 rounded-xl hover:shadow-lg transition-all duration-300"
+          >
+            Get Custom Quote
+          </button>
+        </div>
+
         {/* Automation Areas */}
         <div className="mt-20">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">What We Can Automate</h2>
@@ -281,22 +308,57 @@ const ProcessAutomation = () => {
           </div>
         </div>
 
+        {/* Features Section */}
+        <div className="mt-20">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Why Choose Our Automation Services?</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+              <div className="flex justify-center mb-4">
+                <FaCogs className="text-5xl text-teal-600" />
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-gray-800">Smart Automation</h3>
+              <p className="text-gray-600">AI-powered workflows that adapt and optimize automatically</p>
+            </div>
+            
+            <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+              <div className="flex justify-center mb-4">
+                <FaRocket className="text-5xl text-violet-600" />
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-gray-800">Rapid Implementation</h3>
+              <p className="text-gray-600">Quick setup and deployment to start saving time immediately</p>
+            </div>
+            
+            <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+              <div className="flex justify-center mb-4">
+                <FaChartLine className="text-5xl text-emerald-600" />
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-gray-800">Scalable Growth</h3>
+              <p className="text-gray-600">Solutions that grow with your business needs and scale</p>
+            </div>
+          </div>
+        </div>
+
         {/* ROI Calculator */}
         <div className="mt-20 bg-gradient-to-r from-teal-600 to-violet-700 rounded-2xl p-12 text-white">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Calculate Your ROI</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Calculate Your ROI</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold mb-2">30 hours</div>
-              <div className="text-lg opacity-90">Average time saved per week</div>
+              <div className="text-4xl font-bold mb-2">30+</div>
+              <div className="text-lg opacity-90">Hours Saved Weekly</div>
             </div>
             <div>
               <div className="text-4xl font-bold mb-2">₹50,000</div>
-              <div className="text-lg opacity-90">Monthly cost savings</div>
+              <div className="text-lg opacity-90">Monthly Cost Savings</div>
             </div>
             <div>
               <div className="text-4xl font-bold mb-2">3 months</div>
-              <div className="text-lg opacity-90">Average payback period</div>
+              <div className="text-lg opacity-90">Average Payback Period</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">95%</div>
+              <div className="text-lg opacity-90">Client Satisfaction</div>
             </div>
           </div>
 
@@ -413,14 +475,38 @@ const ProcessAutomation = () => {
         </div>
       )}
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="flex justify-center mb-4">
-            <img src="../logoset.png" alt="Logo" className="w-20 transform scale-150" />
+      {/* Updated Footer with Better Styling */}
+      <footer className="bg-gradient-to-r from-slate-800 via-teal-900 to-slate-800 text-white py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-8">
+            <div className="flex justify-center mb-6">
+              <div className="bg-white rounded-full p-4 shadow-lg">
+                <img src="../logoset.png" alt="Logo" className="w-16 h-16 object-contain" />
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-teal-300 to-violet-300 bg-clip-text text-transparent">
+              Settlo Academy
+            </h3>
+            <p className="text-lg text-gray-300 mb-2">© 2025 Settlo Academy. All rights reserved.</p>
+            <p className="text-teal-400 font-medium text-xl">Automating success, one process at a time</p>
           </div>
-          <p className="text-lg">© 2025 Settlo Academy. All rights reserved.</p>
-          <p className="mt-2 text-teal-400">Automating success, one process at a time</p>
+          
+          <div className="border-t border-gray-700 pt-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div>
+                <h4 className="font-semibold text-teal-300 mb-2">📧 Contact Us</h4>
+                <p className="text-gray-300">info@settlo.com</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-violet-300 mb-2">⚙️ Let's Automate Together</h4>
+                <p className="text-gray-300">Transform your business processes</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-emerald-300 mb-2">💡 Innovation</h4>
+                <p className="text-gray-300">Smart automation solutions</p>
+              </div>
+            </div>
+          </div>
         </div>
       </footer>
     </div>

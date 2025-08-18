@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 
 const ContentMarketingMastery = () => {
@@ -6,15 +7,14 @@ const ContentMarketingMastery = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    email: ''
+    email: '' ,
   });
   const [errors, setErrors] = useState({});
   const [activeModule, setActiveModule] = useState(0);
 
   const validateForm = () => {
     const newErrors = {};
-    
-    // Name validation
+
     if (!formData.name.trim()) {
       newErrors.name = 'Name is required';
     } else if (!/^[a-zA-Z\s]+$/.test(formData.name)) {
