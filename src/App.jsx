@@ -32,6 +32,8 @@ import WebDevelopment from './pages/services/WebDevelopment.jsx';
 import GraphicDesign from './pages/services/GraphicDesign.jsx';
 import ProcessAutomation from './pages/services/ProcessAutomation.jsx';
 import TextileDesign from './pages/services/TextileDesign.jsx';
+import SoftwareDevelopment from './pages/services/SoftwareMobileApps.jsx';
+import SoftwareMobileApps from './pages/services/SoftwareMobileApps.jsx';
 function App() {
   return (
     <BrowserRouter>
@@ -75,6 +77,7 @@ function App() {
         <Route path="/services/graphic-design" element={<GraphicDesign />} />
         <Route path="/services/process-automation" element={<ProcessAutomation />} />
         <Route path="/services/textile-design" element={<TextileDesign />} />
+         <Route path="/services/software-development" element={<SoftwareMobileApps />} />
       </Routes>
     </BrowserRouter>
   );

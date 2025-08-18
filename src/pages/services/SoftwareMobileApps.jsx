@@ -1,8 +1,8 @@
-// pages/services/GraphicDesign.jsx
+// pages/services/SoftwareMobileApps.jsx
 import React, { useState } from 'react';
-import { FaPalette, FaRocket, FaStar, FaLightbulb } from 'react-icons/fa';
+import { FaCode, FaMobile, FaLaptopCode, FaRocket } from 'react-icons/fa';
 
-const GraphicDesign = () => {
+const SoftwareMobileApps = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState('');
@@ -17,69 +17,63 @@ const GraphicDesign = () => {
 
   const packages = [
     {
-      name: "Basic Brand Pack",
-      price: "₹2,999",
-      period: "(one-time)",
+      name: "App Starter",
+      price: "₹19,999",
+      period: "/project",
       features: [
-        "Custom logo design",
-        "Business card design",
-        "2 marketing banners",
-        "2 free revisions included",
-        "High-resolution files",
-        "Basic brand guidelines",
-        "Social media logo variants",
-        "Free consultation call"
+        "Basic mobile app (Android or iOS)",
+        "5 core features/screens",
+        "Simple UI/UX design",
+        "Basic backend integration",
+        "App store deployment assistance",
+        "1 month free support",
+        "Source code provided",
+        "Basic documentation"
       ],
-      goal: "Perfect starter visual identity for new businesses",
+      goal: "Perfect for small businesses & startups",
       popular: false,
-      gradient: "from-pink-400 to-red-600",
-      deliveryTime: "3-5 days",
-      revisions: "2 Free reels",
+      gradient: "from-blue-500 to-purple-600",
       savings: null
     },
     {
-      name: "Creative Suite",
-      price: "₹6,999",
-      period: "(one-time)",
+      name: "Pro Development",
+      price: "₹39,999",
+      period: "/project",
       features: [
-        "Complete branding kit (logo, letterhead, business cards)",
-        "Social media templates (10 designs)",
-        "5 marketing banners/posters",
-        "2 free reels design templates",
-        "Brand style guide",
-        "Unlimited revisions",
-        "Print-ready files",
-        "Social media cover designs",
-        "Email signature design"
+        "Cross-platform app (iOS + Android)",
+        "10-15 advanced features/screens",
+        "Premium UI/UX design",
+        "Advanced backend with database",
+        "API integrations (payment, social login)",
+        "Push notifications",
+        "Admin panel included",
+        "3 months free support",
+        "App store optimization"
       ],
-      goal: "Consistent and stylish visuals across all platforms",
+      goal: "Scale your business with advanced features",
       popular: true,
-      gradient: "from-purple-500 to-pink-600",
-      deliveryTime: "7-10 days",
-      revisions: "Unlimited",
+      gradient: "from-green-500 to-teal-600",
       savings: "Best Value"
     },
     {
-      name: "Premium Design Hub",
-      price: "₹11,999",
-      period: "(one-time)",
+      name: "Enterprise Solution",
+      price: "₹59,999",
+      period: "/project",
       features: [
-        "Complete brand identity package",
-        "15 marketing assets (brochures, flyers, posters)",
-        "2 ad creatives per month for 3 months",
-        "Brand guidelines document",
-        "Packaging design concepts",
-        "Website graphics package",
-        "Social media content calendar designs",
-        "Vector illustrations (5 custom)",
-        "3D mockups and presentations",
-        "Free reels templates (5 premium designs)"
+        "Custom software + mobile app suite",
+        "Unlimited features & integrations",
+        "Advanced AI/ML capabilities",
+        "Multi-platform deployment",
+        "Enterprise-grade security",
+        "Real-time analytics dashboard",
+        "Custom API development",
+        "6 months premium support",
+        "Dedicated project manager",
+        "Cloud infrastructure setup"
       ],
-      goal: "Professionally branded campaigns with ongoing support",
+      goal: "Complete digital transformation solution",
       popular: false,
-      gradient: "from-indigo-500 to-purple-700",
-      deliveryTime: "10-15 days",
-      revisions: "Unlimited + 3 months support",
+      gradient: "from-purple-500 to-pink-600",
       savings: "Premium Plan"
     }
   ];
@@ -184,13 +178,13 @@ const GraphicDesign = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 text-gray-800">
       {/* Header */}
-      <header className="bg-gradient-to-r from-pink-600 to-purple-700 text-white py-16 px-4">
+      <header className="bg-gradient-to-r from-indigo-600 to-blue-700 text-white py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <div className="flex justify-center items-center mb-6">
             <div>
-              <h1 className="text-4xl md:text-6xl font-bold mb-4">Graphic Design Services</h1>
+              <h1 className="text-4xl md:text-6xl font-bold mb-4">Software & Mobile App Development</h1>
               <p className="text-xl md:text-2xl max-w-3xl mx-auto">
-                Create stunning visuals that make your brand unforgettable
+                Transform your ideas into powerful applications with our expert development solutions
               </p>
             </div>
           </div>
@@ -200,10 +194,10 @@ const GraphicDesign = () => {
       {/* Packages Section */}
       <main className="max-w-7xl mx-auto px-4 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Design Packages for Every Need</h2>
-          <p className="text-xl text-gray-600 mb-4">From logo design to complete brand identity solutions</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Choose Your Development Package</h2>
+          <p className="text-xl text-gray-600 mb-4">From simple apps to enterprise solutions</p>
           <div className="bg-gradient-to-r from-orange-400 to-red-500 text-white px-6 py-3 rounded-full inline-block font-semibold text-lg shadow-lg">
-            🎨 Customizable Pricing Available - Starting from ₹500/-
+            🚀 Custom Development Available - Starting from ₹15,000/-
           </div>
         </div>
 
@@ -212,15 +206,15 @@ const GraphicDesign = () => {
             <div 
               key={index}
               className={`relative bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 ${
-                pkg.popular ? 'ring-4 ring-purple-500 scale-105' : ''
+                pkg.popular ? 'ring-4 ring-green-500 scale-105' : ''
               }`}
             >
               {pkg.popular && (
-                <div className="absolute top-0 right-0 bg-purple-500 text-white px-6 py-2 rounded-bl-2xl font-bold">
+                <div className="absolute top-0 right-0 bg-green-500 text-white px-6 py-2 rounded-bl-2xl font-bold">
                   Most Popular
                 </div>
               )}
-
+              
               {pkg.savings && (
                 <div className="absolute top-0 left-0 bg-red-500 text-white px-4 py-2 rounded-br-2xl text-sm font-bold">
                   {pkg.savings}
@@ -231,24 +225,16 @@ const GraphicDesign = () => {
                 <h3 className="text-2xl font-bold mb-4">{pkg.name}</h3>
                 <div className="mb-4">
                   <span className="text-4xl md:text-5xl font-bold">{pkg.price}</span>
-                  <span className="text-lg opacity-80 ml-2">{pkg.period}</span>
+                  <span className="text-lg opacity-80">{pkg.period}</span>
                 </div>
-                <p className="text-lg opacity-90 mb-4">{pkg.goal}</p>
-                <div className="grid grid-cols-2 gap-4 text-sm">
-                  <div className="bg-white/20 rounded-lg p-2">
-                    <span className="font-semibold">⏱️ {pkg.deliveryTime}</span>
-                  </div>
-                  <div className="bg-white/20 rounded-lg p-2">
-                    <span className="font-semibold">🔄 {pkg.revisions}</span>
-                  </div>
-                </div>
+                <p className="text-lg opacity-90">{pkg.goal}</p>
               </div>
 
               <div className="p-8">
                 <ul className="space-y-4 mb-8">
                   {pkg.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start">
-                      <span className="text-purple-500 font-bold text-xl mr-3">✓</span>
+                      <span className="text-green-500 font-bold text-xl mr-3">✓</span>
                       <span className="text-gray-700">{feature}</span>
                     </li>
                   ))}
@@ -265,106 +251,99 @@ const GraphicDesign = () => {
           ))}
         </div>
 
-        {/* Custom Pricing Notice */}
-        <div className="mt-12 bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl p-8 text-center border border-pink-200">
+        {/* Custom Development Notice */}
+        <div className="mt-12 bg-gradient-to-r from-indigo-50 to-blue-50 rounded-2xl p-8 text-center border border-indigo-200">
           <div className="flex justify-center mb-4">
-            <FaLightbulb className="text-4xl text-yellow-500" />
+            <FaRocket className="text-4xl text-yellow-500" />
           </div>
-          <h3 className="text-2xl font-bold text-gray-800 mb-4">Need a Custom Design Solution?</h3>
+          <h3 className="text-2xl font-bold text-gray-800 mb-4">Need Custom Development?</h3>
           <p className="text-lg text-gray-600 mb-4">
-            Our design packages are fully customizable to meet your specific brand needs. 
-            We offer flexible pricing starting from just ₹500/- based on your requirements.
+            Every business is unique. We create tailor-made software solutions that perfectly fit your requirements. 
+            Custom development starting from just ₹15,000/- based on project complexity.
           </p>
           <button 
-            onClick={() => openModal('Custom Package')}
-            className="bg-gradient-to-r from-pink-600 to-purple-600 text-white font-bold py-3 px-8 rounded-xl hover:shadow-lg transition-all duration-300"
+            onClick={() => openModal('Custom Development')}
+            className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-bold py-3 px-8 rounded-xl hover:shadow-lg transition-all duration-300"
           >
             Get Custom Quote
           </button>
         </div>
 
-        {/* Design Process */}
-        <div className="mt-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Our Design Process</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="bg-white rounded-xl shadow-lg p-6 text-center">
-              <div className="text-4xl mb-4">📋</div>
-              <h3 className="font-bold text-gray-800 mb-2">1. Brief</h3>
-              <p className="text-sm text-gray-600">Understanding your vision and requirements</p>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-lg p-6 text-center">
-              <div className="text-4xl mb-4">💡</div>
-              <h3 className="font-bold text-gray-800 mb-2">2. Concept</h3>
-              <p className="text-sm text-gray-600">Creating initial design concepts</p>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-lg p-6 text-center">
-              <div className="text-4xl mb-4">🎨</div>
-              <h3 className="font-bold text-gray-800 mb-2">3. Design</h3>
-              <p className="text-sm text-gray-600">Developing the final designs</p>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-lg p-6 text-center">
-              <div className="text-4xl mb-4">🚀</div>
-              <h3 className="font-bold text-gray-800 mb-2">4. Deliver</h3>
-              <p className="text-sm text-gray-600">Final files and brand guidelines</p>
-            </div>
-          </div>
-        </div>
-
         {/* Features Section */}
         <div className="mt-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Why Choose Our Design Services?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Why Choose Our Development Services?</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl shadow-lg p-8 text-center">
               <div className="flex justify-center mb-4">
-                <FaPalette className="text-5xl text-pink-600" />
+                <FaCode className="text-5xl text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold mb-4 text-gray-800">Creative Excellence</h3>
-              <p className="text-gray-600">Award-winning designs that capture your brand essence perfectly</p>
+              <h3 className="text-xl font-bold mb-4 text-gray-800">Clean Code Architecture</h3>
+              <p className="text-gray-600">Scalable, maintainable code following industry best practices and standards</p>
             </div>
             
             <div className="bg-white rounded-xl shadow-lg p-8 text-center">
               <div className="flex justify-center mb-4">
-                <FaRocket className="text-5xl text-purple-600" />
+                <FaMobile className="text-5xl text-green-600" />
               </div>
-              <h3 className="text-xl font-bold mb-4 text-gray-800">Fast Turnaround</h3>
-              <p className="text-gray-600">Quick delivery without compromising on quality or attention to detail</p>
+              <h3 className="text-xl font-bold mb-4 text-gray-800">Cross-Platform Excellence</h3>
+              <p className="text-gray-600">Apps that work seamlessly across all devices and platforms</p>
             </div>
             
             <div className="bg-white rounded-xl shadow-lg p-8 text-center">
               <div className="flex justify-center mb-4">
-                <FaStar className="text-5xl text-yellow-600" />
+                <FaLaptopCode className="text-5xl text-purple-600" />
               </div>
-              <h3 className="text-xl font-bold mb-4 text-gray-800">Premium Quality</h3>
-              <p className="text-gray-600">High-resolution, print-ready designs with unlimited revisions</p>
+              <h3 className="text-xl font-bold mb-4 text-gray-800">Modern Technologies</h3>
+              <p className="text-gray-600">Using cutting-edge frameworks and tools for optimal performance</p>
             </div>
           </div>
         </div>
 
         {/* Stats Section */}
-        <div className="mt-20 bg-gradient-to-r from-pink-600 to-purple-700 rounded-2xl p-12 text-white">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Our Design Success Numbers</h2>
+        <div className="mt-20 bg-gradient-to-r from-indigo-600 to-blue-700 rounded-2xl p-12 text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Our Development Success</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold mb-2">1000+</div>
-              <div className="text-lg opacity-90">Designs Created</div>
+              <div className="text-4xl font-bold mb-2">200+</div>
+              <div className="text-lg opacity-90">Apps Developed</div>
             </div>
             <div>
-              <div className="text-4xl font-bold mb-2">300+</div>
+              <div className="text-4xl font-bold mb-2">99.5%</div>
+              <div className="text-lg opacity-90">Uptime Guarantee</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">150+</div>
               <div className="text-lg opacity-90">Happy Clients</div>
             </div>
             <div>
-              <div className="text-4xl font-bold mb-2">99%</div>
-              <div className="text-lg opacity-90">Client Satisfaction</div>
+              <div className="text-4xl font-bold mb-2">24/7</div>
+              <div className="text-lg opacity-90">Technical Support</div>
             </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">48Hr</div>
-              <div className="text-lg opacity-90">Average Delivery</div>
+          </div>
+        </div>
+
+        {/* Technology Stack Section */}
+        <div className="mt-20">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">Technologies We Use</h2>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="bg-white rounded-xl shadow-lg p-6 text-center">
+              <h3 className="font-bold text-gray-800 mb-2">Mobile</h3>
+              <p className="text-sm text-gray-600">React Native, Flutter, Swift, Kotlin</p>
+            </div>
+            <div className="bg-white rounded-xl shadow-lg p-6 text-center">
+              <h3 className="font-bold text-gray-800 mb-2">Frontend</h3>
+              <p className="text-sm text-gray-600">React, Vue.js, Angular, Next.js</p>
+            </div>
+            <div className="bg-white rounded-xl shadow-lg p-6 text-center">
+              <h3 className="font-bold text-gray-800 mb-2">Backend</h3>
+              <p className="text-sm text-gray-600">Node.js, Python, Java, .NET</p>
+            </div>
+            <div className="bg-white rounded-xl shadow-lg p-6 text-center">
+              <h3 className="font-bold text-gray-800 mb-2">Database</h3>
+              <p className="text-sm text-gray-600">MongoDB, PostgreSQL, MySQL, Firebase</p>
             </div>
           </div>
         </div>
@@ -398,7 +377,7 @@ const GraphicDesign = () => {
                     onChange={handleChange}
                     className={`w-full px-4 py-3 rounded-lg border ${
                       errors.fullName ? 'border-red-500' : 'border-gray-300'
-                    } focus:outline-none focus:ring-2 focus:ring-purple-500`}
+                    } focus:outline-none focus:ring-2 focus:ring-blue-500`}
                     placeholder="Enter your full name"
                   />
                   {errors.fullName && <p className="mt-1 text-red-500 text-sm">{errors.fullName}</p>}
@@ -413,7 +392,7 @@ const GraphicDesign = () => {
                     onChange={handleChange}
                     className={`w-full px-4 py-3 rounded-lg border ${
                       errors.phone ? 'border-red-500' : 'border-gray-300'
-                    } focus:outline-none focus:ring-2 focus:ring-purple-500`}
+                    } focus:outline-none focus:ring-2 focus:ring-blue-500`}
                     placeholder="Enter 10-digit phone number"
                   />
                   {errors.phone && <p className="mt-1 text-red-500 text-sm">{errors.phone}</p>}
@@ -428,7 +407,7 @@ const GraphicDesign = () => {
                     onChange={handleChange}
                     className={`w-full px-4 py-3 rounded-lg border ${
                       errors.email ? 'border-red-500' : 'border-gray-300'
-                    } focus:outline-none focus:ring-2 focus:ring-purple-500`}
+                    } focus:outline-none focus:ring-2 focus:ring-blue-500`}
                     placeholder="Enter your email"
                   />
                   {errors.email && <p className="mt-1 text-red-500 text-sm">{errors.email}</p>}
@@ -447,20 +426,20 @@ const GraphicDesign = () => {
                 </div>
                 
                 <div className="mb-6">
-                  <label className="block text-gray-700 font-medium mb-2">Message (Optional)</label>
+                  <label className="block text-gray-700 font-medium mb-2">Project Requirements (Optional)</label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     rows="3"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                    placeholder="Tell us about your design requirements..."
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Tell us about your app idea or requirements..."
                   />
                 </div>
                 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-3 px-6 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all"
+                  className="w-full bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:from-indigo-700 hover:to-blue-700 transition-all"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit Request'}
@@ -471,8 +450,8 @@ const GraphicDesign = () => {
         </div>
       )}
 
-      {/* Updated Footer with Better Styling */}
-      <footer className="bg-gradient-to-r from-slate-800 via-purple-900 to-slate-800 text-white py-16 px-4">
+      {/* Footer */}
+      <footer className="bg-gradient-to-r from-slate-800 via-indigo-900 to-slate-800 text-white py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
             <div className="flex justify-center mb-6">
@@ -480,26 +459,26 @@ const GraphicDesign = () => {
                 <img src="../logoset.png" alt="Logo" className="w-16 h-16 object-contain" />
               </div>
             </div>
-            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-pink-300 to-purple-300 bg-clip-text text-transparent">
+            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-300 to-green-300 bg-clip-text text-transparent">
               Settlo Academy
             </h3>
             <p className="text-lg text-gray-300 mb-2">© 2025 Settlo Academy. All rights reserved.</p>
-            <p className="text-pink-400 font-medium text-xl">Creating visual experiences that inspire</p>
+            <p className="text-green-400 font-medium text-xl">Crafting innovative software solutions</p>
           </div>
           
           <div className="border-t border-gray-700 pt-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div>
-                <h4 className="font-semibold text-pink-300 mb-2">🎨 Design Excellence</h4>
-                <p className="text-gray-300">Award-winning creative solutions</p>
+                <h4 className="font-semibold text-blue-300 mb-2">📧 Contact Us</h4>
+                <p className="text-gray-300">info@settlo.com</p>
               </div>
               <div>
-                <h4 className="font-semibold text-purple-300 mb-2">🚀 Let's Create Together</h4>
-                <p className="text-gray-300">Transform your brand identity</p>
+                <h4 className="font-semibold text-green-300 mb-2">🚀 Let's Code Together</h4>
+                <p className="text-gray-300">Transform ideas into reality</p>
               </div>
               <div>
-                <h4 className="font-semibold text-blue-300 mb-2">💡 Innovation</h4>
-                <p className="text-gray-300">Cutting-edge design trends</p>
+                <h4 className="font-semibold text-purple-300 mb-2">💡 Innovation</h4>
+                <p className="text-gray-300">Next-gen development</p>
               </div>
             </div>
           </div>
@@ -509,4 +488,4 @@ const GraphicDesign = () => {
   );
 };
 
-export default GraphicDesign;
+export default SoftwareMobileApps;

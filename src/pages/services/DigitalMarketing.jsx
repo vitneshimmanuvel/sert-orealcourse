@@ -110,7 +110,7 @@ const DigitalMarketing = () => {
     if (validateForm()) {
       setIsSubmitting(true);
       try {
-        const response = await fetch('http://localhost:3000/api/form-submit', {
+        const response = await fetch('https://settlo-forms-notlead.onrender.com/api/form-submit', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

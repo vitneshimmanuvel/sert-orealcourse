@@ -43,7 +43,7 @@ const DigitalMarketingMastery = () => {
         e.preventDefault();
         
         if (validateForm()) {
-            setIsSubmitting(true); // Set loading state
+            setIsSubmitting(true);
             try {
                 const response = await fetch('https://settlo-forms-notlead.onrender.com/api/course-enrollment', {
                     method: 'POST',
