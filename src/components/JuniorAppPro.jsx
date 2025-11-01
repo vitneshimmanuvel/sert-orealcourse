@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import process from 'process';  
 
 const JuniorAppPro = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -42,7 +43,7 @@ const JuniorAppPro = () => {
     if (validateForm()) {
       setIsSubmitting(true);
       try {
-        const response = await fetch('https://settlo-forms-notlead.onrender.com/api/course-enrollment', {
+        const response = await fetch(`${process.env.BACKEND_URL}/api/course-enrollment`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

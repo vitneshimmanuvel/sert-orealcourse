@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-
+import process from 'process';
 const ContentMarketingMastery = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -45,7 +45,7 @@ const ContentMarketingMastery = () => {
     if (validateForm()) {
       setIsSubmitting(true); // Set loading state
       try {
-        const response = await fetch('https://settlo-forms-notlead.onrender.com/api/course-enrollment', {
+        const response = await fetch(`${process.env.BACKEND_URL}/api/course-enrollment`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
