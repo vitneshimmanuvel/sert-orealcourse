@@ -22,7 +22,7 @@ import JuniorAIPro from './components/JuniorAIPro.jsx';
 import JuniorToonPro from './components/JuniorToonPro.jsx';
 import JuniorWebPro from './components/JuniorWebPro.jsx';
 import BrandProCourse from './components/BrandProCourse.jsx';
-
+import PythonNetworkingCourse from './components/PythonNetworkingCourse.jsx'; 
 
 
 
@@ -60,6 +60,7 @@ function App() {
         <Route path="/juniorai"  element={<JuniorAIPro/>}/>
         <Route path="/juniortoonpro" element={<JuniorToonPro/>}/>
         <Route path="/brandbro" element={<BrandProCourse/>}/>
+        <Route path="/PythonNetworkingCourse" element={<PythonNetworkingCourse/>}/>
 
 
 
